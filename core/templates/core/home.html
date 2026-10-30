@@ -1,0 +1,307 @@
+
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block title %}SIGNURE – {% trans "Partenaire de vos ambitions" %}{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <!-- HERO — ACCUEIL -->
+    <section class="hero" id="accueil">
+
+        <div class="hero-photo"></div>
+        <div class="hero-shade"></div>
+
+        <div class="hero-inner">
+
+            <div class="eyebrow">
+                <span class="gold-line"></span>
+                {% trans "CONSEIL · PARTENARIATS · PROJETS STRATÉGIQUES" %}
+            </div>
+
+            <h1>
+                {% trans "Les grandes ambitions" %}<br>
+                {% trans "méritent des" %}
+                <em>{% trans "partenaires d'exception." %}</em>
+            </h1>
+
+            <p>
+                {% trans "Des ressources naturelles aux infrastructures de demain, SIGNURE accompagne les acteurs qui façonnent un avenir durable." %}
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-gold" href="#expertises">
+                    {% trans "Explorer nos expertises" %}
+                    <span>↗</span>
+                </a>
+
+                <a class="btn btn-outline" href="#contact">
+                    {% trans "Nous contacter" %}
+                    <span>→</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-bottom">
+            <span>01 / {% trans "L'AMBITION COMME HORIZON" %}</span>
+            <span>{% trans "FAITES DÉFILER" %} ↓</span>
+        </div>
+
+    </section>
+
+    <!-- QUI SOMMES-NOUS -->
+    <section class="intro section" id="apropos">
+
+        <div class="section-tag">
+            {% trans "01 — QUI SOMMES-NOUS" %}
+        </div>
+
+        <div class="intro-grid">
+
+            <h2>
+                {% trans "Faire avancer" %}<br>
+                {% trans "ce qui" %} <em>{% trans "compte." %}</em>
+            </h2>
+
+            <div>
+                <p class="lead">
+                    {% trans "Chaque grand projet commence par une vision. Nous croyons à la force des collaborations pour la concrétiser." %}
+                </p>
+
+                <p>
+                    {% trans "SIGNURE est une entreprise multisectorielle intervenant dans les domaines stratégiques de l'énergie, des mines, de la construction et des infrastructures." %}
+                </p>
+
+                <p>
+                    {% trans "Nous accompagnons les institutions publiques, les entreprises et les opérateurs industriels dans la structuration et la réalisation de leurs projets." %}
+                </p>
+
+                <a class="text-link" href="{% url 'apropos' %}">
+                    {% trans "Découvrir SIGNURE" %}
+                    <span>↗</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NOS DOMAINES D'EXCELLENCE -->
+    <section class="expertise section" id="expertises">
+
+        <div class="section-heading">
+            <div>
+                <div class="section-tag light">
+                    {% trans "02 — NOS SECTEURS" %}
+                </div>
+
+                <h2>
+                    {% trans "Au cœur des secteurs" %}<br>
+                    {% trans "qui transforment" %} <em>{% trans "demain." %}</em>
+                </h2>
+            </div>
+
+            <p>
+                {% trans "Une expertise multisectorielle au service des grands projets industriels, énergétiques et infrastructurels." %}
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <!-- MINES -->
+            <article class="sector mining">
+                <div class="sector-top">
+                    01 <span>↗</span>
+                </div>
+
+                <div class="sector-bottom">
+                    <h3>{% trans "Mines et ressources" %}</h3>
+                    <p>
+                        {% trans "Équipements spécialisés, logistique minière et gestion des opérations." %}
+                    </p>
+                </div>
+            </article>
+
+            <!-- ÉNERGIE -->
+            <article class="sector energy">
+                <div class="sector-top">
+                    02 <span>↗</span>
+                </div>
+
+                <div class="sector-bottom">
+                    <h3>{% trans "Énergie, pétrole et gaz" %}</h3>
+                    <p>
+                        {% trans "Transactions énergétiques, approvisionnement et distribution." %}
+                    </p>
+                </div>
+            </article>
+
+            <!-- INFRASTRUCTURES -->
+            <article class="sector infra">
+                <div class="sector-top">
+                    03 <span>↗</span>
+                </div>
+
+                <div class="sector-bottom">
+                    <h3>{% trans "Construction et infrastructures" %}</h3>
+                    <p>
+                        {% trans "Ingénierie, grands travaux et projets structurants." %}
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="home-expertise-link">
+            <a class="btn btn-gold" href="{% url 'expertises' %}">
+                {% trans "Découvrir toutes nos expertises" %}
+                <span>↗</span>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- NOTRE APPROCHE -->
+    <section class="approach section" id="approche">
+
+        <div class="section-tag">
+            {% trans "03 — NOTRE PHILOSOPHIE" %}
+        </div>
+
+        <div class="home-approach-grid">
+
+            <h2>
+                {% trans "Une ambition commune." %}<br>
+                <em>{% trans "Un impact durable." %}</em>
+            </h2>
+
+            <div class="values">
+
+                <div>
+                    <span>01</span>
+                    <h3>{% trans "Vision stratégique" %}</h3>
+                    <p>
+                        {% trans "Comprendre les ambitions et les enjeux de chaque projet." %}
+                    </p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <h3>{% trans "Relations de confiance" %}</h3>
+                    <p>
+                        {% trans "Construire des collaborations solides et durables." %}
+                    </p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <h3>{% trans "Engagement à long terme" %}</h3>
+                    <p>
+                        {% trans "Favoriser les initiatives créatrices de valeur durable." %}
+                    </p>
+                </div>
+
+                <a class="text-link" href="{% url 'approche' %}">
+                    {% trans "Découvrir notre approche" %}
+                    <span>↗</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAVAILLONS ENSEMBLE -->
+    <section class="collaboration-section">
+
+        <div class="section-tag">
+            {% trans "PARTENARIATS ET OPPORTUNITÉS" %}
+        </div>
+
+        <h2 class="collaboration-title">
+            {% trans "Travaillons" %} <em>{% trans "ensemble" %}</em>
+        </h2>
+
+        <div class="collaboration-content">
+
+            <p>
+                {% trans "Que vous soyez une entreprise minière d’envergure, un organisme public stratégique ou une institution privée engagée dans des projets d’infrastructure ou d’énergie, SIGNURE est le partenaire idéal pour accompagner vos initiatives les plus ambitieuses." %}
+            </p>
+
+            <a href="#contact" class="collaboration-link">
+                {% trans "Contactez-nous pour explorer des opportunités de collaboration" %}
+                <span aria-hidden="true">↗</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+
+        <div class="contact-copy">
+
+            <div class="section-tag light">
+                {% trans "04 — ENTRONS EN CONTACT" %}
+            </div>
+
+            <h2>
+                {% trans "Votre prochain grand" %}<br>
+                {% trans "projet commence" %} <em>{% trans "ici." %}</em>
+            </h2>
+
+            <p>
+                {% trans "Parlons de vos objectifs et explorons ensemble les opportunités de collaboration." %}
+            </p>
+
+            <div class="contact-rule"></div>
+
+            <span>
+                {% trans "PARTENARIATS · COLLABORATIONS · OPPORTUNITÉS" %}
+            </span>
+
+        </div>
+
+        <div class="contact-form">
+
+            <h3>{% trans "Parlez-nous de votre projet" %}</h3>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="{% if message.tags == 'success' %}success{% else %}warning{% endif %}" role="status">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    <label for="{{ field.id_for_label }}">
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <div class="error">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                <button type="submit" class="btn btn-gold">
+                    {% trans "Envoyer ma demande" %}
+                    <span>↗</span>
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

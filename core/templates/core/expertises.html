@@ -1,0 +1,315 @@
+
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Nos expertises" %} — SIGNURE{% endblock %}
+
+{% block content %}
+
+<main class="inner-page expertises-page">
+
+    <!-- EN-TÊTE -->
+
+    <div class="section-tag">
+        {% trans "NOS DOMAINES D'ACTIVITÉ" %}
+    </div>
+
+    <h1>
+        {% trans "Nos" %}
+        <em>{% trans "expertises" %}</em>
+    </h1>
+
+    <!-- PRÉSENTATION -->
+
+    <div class="expertise-intro-layout">
+
+        <div class="expertise-intro-text">
+
+            <p class="expertise-intro">
+                {% trans "SIGNURE accompagne les gouvernements, les compagnies nationales et les multinationales dans la réalisation de projets stratégiques à haute valeur ajoutée, en mobilisant des compétences techniques, opérationnelles et multisectorielles." %}
+            </p>
+
+        </div>
+
+        <!-- PHOTO À DROITE DÉSACTIVÉE
+        <div class="about-image signure-photo-reflet">
+            <img
+                src="{% static 'core/signure_expertises.png' %}"
+                alt="Expertises minières, énergétiques et industrielles de SIGNURE"
+            >
+        </div>
+        -->
+
+    </div>
+
+
+    <!-- NOS DOMAINES D'EXCELLENCE -->
+
+    <section class="excellence-section">
+
+        <div class="section-tag">
+            {% trans "NOS SECTEURS STRATÉGIQUES" %}
+        </div>
+
+        <h2 class="expertise-section-title">
+            {% trans "Nos domaines" %}
+            <em>{% trans "d'excellence" %}</em>
+        </h2>
+
+        <div class="excellence-grid">
+
+            <!-- ÉNERGIE, PÉTROLE ET GAZ -->
+
+            <article class="excellence-card">
+
+                <span class="excellence-number">01</span>
+
+                <h3>
+                    {% trans "Énergie, pétrole et gaz" %}
+                </h3>
+
+                <p>
+                    {% trans "Nous intervenons auprès des gouvernements, compagnies nationales et multinationales pour :" %}
+                </p>
+
+                <ul>
+                    <li>
+                        {% trans "Structurer des transactions pétrolières et gazières." %}
+                    </li>
+
+                    <li>
+                        {% trans "Optimiser la chaîne d'approvisionnement énergétique." %}
+                    </li>
+
+                    <li>
+                        {% trans "Assurer conformité, sécurité et rentabilité." %}
+                    </li>
+
+                    <li>
+                        {% trans "Accompagner les projets d'importation, de stockage et de distribution de produits pétroliers." %}
+                    </li>
+                </ul>
+
+                <p class="excellence-footer">
+                    {% trans "Notre approche garantit un pilotage rigoureux des opérations, même dans des environnements réglementaires stricts." %}
+                </p>
+
+            </article>
+
+
+            <!-- MINES ET RESSOURCES -->
+
+            <article class="excellence-card">
+
+                <span class="excellence-number">02</span>
+
+                <h3>
+                    {% trans "Mines et exploitation des ressources" %}
+                </h3>
+
+                <p>
+                    {% trans "SIGNURE met à disposition un large éventail de capacités opérationnelles à haute valeur ajoutée :" %}
+                </p>
+
+                <ul>
+                    <li>
+                        {% trans "Location d'engins lourds et d'équipements spécialisés." %}
+                    </li>
+
+                    <li>
+                        {% trans "Appui logistique pour les sites miniers." %}
+                    </li>
+
+                    <li>
+                        {% trans "Gestion d'opérations de terrain complexes." %}
+                    </li>
+
+                    <li>
+                        {% trans "Solutions d'optimisation pour la productivité et la continuité d'exploitation." %}
+                    </li>
+                </ul>
+
+                <p class="excellence-footer">
+                    {% trans "Nous sommes un partenaire fiable pour les sociétés minières recherchant disponibilité, performance et expertise technique." %}
+                </p>
+
+            </article>
+
+
+            <!-- CONSTRUCTION ET INFRASTRUCTURES -->
+
+            <article class="excellence-card">
+
+                <span class="excellence-number">03</span>
+
+                <h3>
+                    {% trans "Construction, ingénierie et infrastructures" %}
+                </h3>
+
+                <p>
+                    {% trans "Nous pilotons des projets d'infrastructures majeurs avec une approche centrée sur :" %}
+                </p>
+
+                <ul>
+                    <li>
+                        {% trans "La rigueur technique." %}
+                    </li>
+
+                    <li>
+                        {% trans "Le respect des délais et des coûts." %}
+                    </li>
+
+                    <li>
+                        {% trans "L'intégration des normes environnementales et sociales." %}
+                    </li>
+
+                    <li>
+                        {% trans "La mise en œuvre de technologies modernes et de solutions industrielles innovantes." %}
+                    </li>
+                </ul>
+
+                <p class="excellence-footer">
+                    {% trans "SIGNURE intervient sur des constructions industrielles, énergétiques, logistiques et institutionnelles de grande envergure." %}
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CE QUI NOUS DISTINGUE -->
+
+    <section class="distinction-section">
+
+        <div class="section-tag">
+            {% trans "NOS AVANTAGES STRATÉGIQUES" %}
+        </div>
+
+        <h2 class="expertise-section-title">
+            {% trans "Ce qui nous" %}
+            <em>{% trans "distingue" %}</em>
+        </h2>
+
+        <div class="distinction-grid">
+
+            <!-- AVANTAGE 1 -->
+
+            <article class="distinction-card">
+
+                <span>01</span>
+
+                <h3>
+                    {% trans "Expertise multisectorielle" %}
+                </h3>
+
+                <p>
+                    {% trans "Une expertise multisectorielle d'élite couvrant les mines, l'énergie, les infrastructures et la logistique." %}
+                </p>
+
+            </article>
+
+
+            <!-- AVANTAGE 2 -->
+
+            <article class="distinction-card">
+
+                <span>02</span>
+
+                <h3>
+                    {% trans "Réactivité opérationnelle" %}
+                </h3>
+
+                <p>
+                    {% trans "Une capacité d'intervention opérationnelle immédiate avec des équipes et des équipements mobilisables rapidement." %}
+                </p>
+
+            </article>
+
+
+            <!-- AVANTAGE 3 -->
+
+            <article class="distinction-card">
+
+                <span>03</span>
+
+                <h3>
+                    {% trans "Approche sur mesure" %}
+                </h3>
+
+                <p>
+                    {% trans "Une approche sur mesure, discrète et confidentielle, adaptée aux enjeux politiques, économiques et stratégiques de nos clients." %}
+                </p>
+
+            </article>
+
+
+            <!-- AVANTAGE 4 -->
+
+            <article class="distinction-card">
+
+                <span>04</span>
+
+                <h3>
+                    {% trans "Conformité et gouvernance" %}
+                </h3>
+
+                <p>
+                    {% trans "Des standards internationaux de conformité et de gouvernance garantissant transparence, sécurité et intégrité." %}
+                </p>
+
+            </article>
+
+
+            <!-- AVANTAGE 5 -->
+
+            <article class="distinction-card">
+
+                <span>05</span>
+
+                <h3>
+                    {% trans "Réseau de partenaires" %}
+                </h3>
+
+                <p>
+                    {% trans "Un réseau d'influence solide composé de partenaires institutionnels, industriels et financiers." %}
+                </p>
+
+            </article>
+
+
+            <!-- AVANTAGE 6 -->
+
+            <article class="distinction-card">
+
+                <span>06</span>
+
+                <h3>
+                    {% trans "Performance durable" %}
+                </h3>
+
+                <p>
+                    {% trans "Un engagement profond envers la performance durable, soutenu par l'innovation et le développement du capital humain." %}
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONCLUSION -->
+
+    <div class="expertise-conclusion">
+
+        <p>
+            {% trans "SIGNURE conjugue excellence technique, rigueur opérationnelle et partenariats stratégiques pour accompagner durablement les ambitions de ses clients." %}
+        </p>
+
+    </div>
+
+</main>
+
+{% endblock %}

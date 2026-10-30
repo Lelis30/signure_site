@@ -1,0 +1,28 @@
+
+# Environnement Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Variables confidentielles
+.env
+.env.*
+!.env.example
+
+# Base de données locale
+db.sqlite3
+db.sqlite3-journal
+
+# Fichiers générés
+staticfiles/
+*.log
+
+# Configuration PyCharm
+.idea/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+# Notes de travail
+/traduire_apropos

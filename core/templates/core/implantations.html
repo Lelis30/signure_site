@@ -1,0 +1,192 @@
+
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+{% trans "Nos implantations" %} — SIGNURE
+{% endblock %}
+
+{% block content %}
+
+<main class="inner-page implantations-page">
+
+    <!-- EN-TÊTE DE LA PAGE -->
+
+    <section class="implantations-header">
+
+        <div class="section-tag">
+            {% trans "PRÉSENCE INTERNATIONALE" %}
+        </div>
+
+        <h1>
+            {% trans "SIGNURE dans" %} <em>{% trans "le monde." %}</em>
+        </h1>
+
+        <p>
+            {% trans "Des équipes à votre écoute sur nos différents marchés pour construire ensemble des projets à fort impact." %}
+        </p>
+
+    </section>
+
+    <!-- NOS IMPLANTATIONS INTERNATIONALES -->
+
+    <div class="implantations-list">
+
+        <!-- BURKINA FASO -->
+
+        <section class="implantation-card implantation-burkina">
+            <div class="implantation-info">
+
+                <h2>
+                    <img
+                        src="https://flagcdn.com/w80/bf.png"
+                        alt="{% trans 'Drapeau du Burkina Faso' %}"
+                        class="country-flag">
+                    SIGNURE BURKINA FASO
+                </h2>
+
+                <p>
+                    {% trans "Nous restons à votre disposition pour répondre à vos demandes et accompagner vos projets." %}
+                </p>
+
+                <a href="mailto:info@thesignure.com">
+                    ✉ info@thesignure.com
+                </a>
+
+                <a href="tel:+22676559654">
+                    ☎ +226 76 55 96 54
+                </a>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/22676559654"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    {% trans "Écrivez-nous sur WhatsApp" %}
+                </a>
+
+            </div>
+        </section>
+
+        <!-- CÔTE D'IVOIRE -->
+
+        <section class="implantation-card implantation-ivoire">
+            <div class="implantation-info">
+
+                <h2>
+                    <img
+                        src="https://flagcdn.com/w80/ci.png"
+                        alt="{% trans "Drapeau de la Côte d'Ivoire" %}"
+                        class="country-flag">
+                    SIGNURE CÔTE D'IVOIRE
+                </h2>
+
+                <p>
+                    {% trans "Échangez avec nos équipes sur vos projets et opportunités de collaboration." %}
+                </p>
+
+                <a href="mailto:info@thesignure.com">
+                    ✉ info@thesignure.com
+                </a>
+
+                <a href="tel:+2250715136557">
+                    ☎ +225 07 15 13 65 57
+                </a>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/2250715136557"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    {% trans "Écrivez-nous sur WhatsApp" %}
+                </a>
+
+            </div>
+        </section>
+
+        <!-- GUINÉE-CONAKRY -->
+
+        <section class="implantation-card implantation-guinee">
+            <div class="implantation-info">
+
+                <h2>
+                    <img
+                        src="https://flagcdn.com/w80/gn.png"
+                        alt="{% trans 'Drapeau de la Guinée' %}"
+                        class="country-flag">
+                    SIGNURE GUINÉE-CONAKRY
+                </h2>
+
+                <p>
+                    {% trans "Contactez-nous pour vos projets miniers, industriels et d'infrastructures." %}
+                </p>
+
+                <a href="mailto:info@thesignure.com">
+                    ✉ info@thesignure.com
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ÉTATS-UNIS -->
+
+        <section class="implantation-card implantation-usa">
+            <div class="implantation-info">
+
+                <h2>
+                    <img
+                        src="https://flagcdn.com/w80/us.png"
+                        alt="{% trans 'Drapeau des États-Unis' %}"
+                        class="country-flag">
+                    SIGNURE USA
+                </h2>
+
+                <p>
+                    {% trans "Notre équipe est à votre écoute pour vos collaborations internationales." %}
+                </p>
+
+                <a href="mailto:info@thesignure.com">
+                    ✉ info@thesignure.com
+                </a>
+
+                <a href="tel:+18327259048">
+                    ☎ +1 832 725 9048
+                </a>
+
+                <a class="whatsapp-button"
+                   href="https://wa.me/18327259048"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    {% trans "Écrivez-nous sur WhatsApp" %}
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ÉMIRATS ARABES UNIS -->
+
+        <section class="implantation-card implantation-uae">
+            <div class="implantation-info">
+
+                <h2>
+                    <img
+                        src="https://flagcdn.com/w80/ae.png"
+                        alt="{% trans 'Drapeau des Émirats arabes unis' %}"
+                        class="country-flag">
+                    SIGNURE UAE
+                </h2>
+
+                <p class="implantation-status">
+                    {% trans "Ouverture prochaine !" %}
+                </p>
+
+                <a href="mailto:info@thesignure.com">
+                    ✉ info@thesignure.com
+                </a>
+
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,227 @@
+{% load static i18n %}
+{% get_current_language as CURRENT_LANGUAGE %}
+
+<!DOCTYPE html>
+<html lang="{{ CURRENT_LANGUAGE }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+          content="{% trans "SIGNURE — Société Internationale de Gestion, Négoce et d'Utilisation de Ressources. Mines, énergie, infrastructures et partenariats stratégiques." %}">
+
+    <title>
+        {% block title %}
+            {% trans "SIGNURE — Partenaire de vos ambitions" %}
+        {% endblock %}
+    </title>
+
+    <!-- POLICES GOOGLE -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet"
+          href="{% static 'core/style.css' %}">
+
+    {% block extra_css %}
+    {% endblock %}
+</head>
+
+<body>
+
+<!-- ==================================
+     EN-TÊTE PRINCIPAL SIGNURE
+================================== -->
+
+<header class="topbar">
+
+    <!-- LOGO ET IDENTITÉ -->
+    <div class="brand-container">
+
+        <a href="{% url 'home' %}"
+           class="signure-brand"
+           aria-label="{% trans 'SIGNURE - Accueil' %}">
+
+            <img
+                src="{% static 'core/logo_SIGNURE.png' %}"
+                alt="Logo officiel SIGNURE"
+                class="signure-logo">
+        </a>
+
+        <div class="company-identity">
+            <span class="company-name">
+                SOCIÉTÉ INTERNATIONALE DE GESTION,<br>
+                NÉGOCE ET D'UTILISATION DE RESSOURCES
+            </span>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="main-navigation"
+         aria-label="{% trans 'Navigation principale' %}">
+
+        <a href="{% url 'home' %}">
+            {% trans "Accueil" %}
+        </a>
+
+        <a href="{% url 'apropos' %}">
+            {% trans "À propos" %}
+        </a>
+
+        <a href="{% url 'expertises' %}">
+            {% trans "Expertises" %}
+        </a>
+
+        <a href="{% url 'approche' %}">
+            {% trans "Notre approche" %}
+        </a>
+
+        <a href="{% url 'implantations' %}">
+            {% trans "Nos implantations" %}
+        </a>
+
+
+        <a href="{% url 'home' %}#contact"
+           class="nav-contact">
+            {% trans "Parlons de votre projet" %}
+            <span aria-hidden="true">↗</span>
+        </a>
+
+
+
+
+<!-- SÉLECTEUR DE LANGUE FR / EN -->
+
+{% get_current_language as CURRENT_LANGUAGE %}
+
+{% if request.resolver_match %}
+
+    {% with current_page=request.resolver_match.url_name %}
+
+        {% language 'fr' %}
+            {% url current_page as french_url %}
+        {% endlanguage %}
+
+        {% language 'en' %}
+            {% url current_page as english_url %}
+        {% endlanguage %}
+
+        <div class="language-switcher">
+
+            <a href="{{ french_url }}"
+               class="{% if CURRENT_LANGUAGE == 'fr' %}active{% endif %}">
+                FR
+            </a>
+
+            <span aria-hidden="true">|</span>
+
+            <a href="{{ english_url }}"
+               class="{% if CURRENT_LANGUAGE == 'en' %}active{% endif %}">
+                EN
+            </a>
+
+        </div>
+
+    {% endwith %}
+
+{% endif %}
+
+
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <button
+        class="menu"
+        type="button"
+        aria-label="{% trans 'Ouvrir le menu' %}"
+        aria-controls="main-navigation"
+        aria-expanded="false">
+        ☰
+    </button>
+
+</header>
+
+
+<!-- ==================================
+     CONTENU DES PAGES
+================================== -->
+
+{% block content %}
+{% endblock %}
+
+
+<!-- ==================================
+     PIED DE PAGE
+================================== -->
+
+<footer class="site-footer">
+
+    <a href="{% url 'home' %}"
+       class="signure-brand"
+       aria-label="{% trans "Retour à l'accueil SIGNURE" %}">
+
+        <img
+            src="{% static 'core/logo_SIGNURE.png' %}"
+            alt="SIGNURE"
+            class="signure-logo">
+    </a>
+
+    <p>
+        {% trans "Ensemble, donnons vie aux grandes ambitions." %}
+    </p>
+
+    <span>
+        © {% now "Y" %} SIGNURE.
+        {% trans "Tous droits réservés." %}
+    </span>
+
+</footer>
+
+
+<!-- BOUTON CONTACT FLOTTANT -->
+
+<a href="{% url 'home' %}#contact"
+   class="floating-contact"
+   aria-label="{% trans 'Contactez-nous' %}">
+
+    <span class="floating-contact-icon"
+          aria-hidden="true">✉</span>
+
+    <span class="floating-contact-text">
+        {% trans "Contactez-nous" %}
+    </span>
+
+</a>
+
+<!-- BOUTON RETOUR EN HAUT -->
+
+<button id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="{% trans 'Retour en haut' %}"
+        title="{% trans 'Retour en haut' %}">
+    ↑
+</button>
+
+<!-- ==================================
+     JAVASCRIPT
+================================== -->
+
+<script src="{% static 'core/main.js' %}"></script>
+
+{% block extra_js %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,2766 @@
+
+/* 01. DESIGN TOKENS & RESET */
+:root {
+  --ink: #0d1b24;
+  --navy: #101e28;
+  --navy-deep: #07141c;
+  --blue: #118db3;
+  --blue-light: #37b4d4;
+  --gold: var(--blue); /* Compatibility with existing HTML class names */
+  --cream: #f5f7f8;
+  --white: #ffffff;
+  --muted: #64757f;
+  --line: #dbe4e8;
+  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Manrope', sans-serif;
+  --container-padding: clamp(22px, 6vw, 110px);
+  --radius: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 105px; }
+body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--cream); line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: var(--font-heading); }
+h1, h2 { letter-spacing: -.05em; }
+:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 3px; }
+
+/* 02. HEADER & BRAND */
+.topbar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 15px var(--container-padding);
+  background: rgba(5, 16, 24, .92);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+  color: var(--white);
+}
+.logo { display: inline-flex; flex-direction: column; font-family: var(--font-heading); font-weight: 800; font-size: 25px; line-height: 1; letter-spacing: .1em; }
+.logo span { color: var(--blue-light); }
+.logo small { margin-top: 7px; color: #dce9ee; font-size: 8px; letter-spacing: .3em; }
+.signure-brand, .topbar .signure-brand { display: inline-flex; align-items: center; flex-shrink: 0; padding: 0; line-height: normal; }
+.signure-logo, .topbar .signure-logo { width: 150px; height: 85px; object-fit: contain; }
+.topbar nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 36px); font-size: 13px; font-weight: 600; }
+.topbar nav a { color: #fff; transition: color .2s ease; }
+.topbar nav a:hover { color: var(--blue-light); }
+.nav-contact { display: inline-flex; align-items: center; border: 1px solid rgba(255,255,255,.55); padding: 13px 19px; }
+.nav-contact:hover { border-color: var(--blue-light); }
+.nav-contact span, .btn span, .text-link span { margin-left: 20px; }
+.menu { display: none; border: 0; background: none; color: #fff; font-size: 29px; }
+
+/* 03. HERO */
+.hero { position: relative; display: flex; align-items: center; min-height: 760px; height: 95vh; max-height: 1000px; overflow: hidden; background: var(--navy); color: #fff; }
+
+
+.hero-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("hero-signure-nuit.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(5, 18, 30, 0.88) 0%,
+        rgba(5, 18, 30, 0.70) 30%,
+        rgba(5, 18, 30, 0.35) 60%,
+        rgba(5, 18, 30, 0.05) 100%
+    );
+}
+
+.hero-inner { position: relative; z-index: 2; width: 100%; max-width: 1150px; padding: 130px var(--container-padding) 70px; }
+.eyebrow, .section-tag { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
+.eyebrow { display: flex; align-items: center; gap: 14px; color: #8ddbf0; }
+.gold-line { display: inline-block; flex: 0 0 32px; width: 32px; height: 1px; background: var(--blue-light); }
+.hero h1 { margin: 30px 0 28px; font-size: clamp(44px, 5.5vw, 86px); font-weight: 700; line-height: 1.13; }
+h1 em, h2 em { font-style: normal; color: var(--blue-light); }
+.hero-inner > p { max-width: 620px; color: #e0e8eb; font-size: clamp(15px, 1.3vw, 18px); line-height: 1.9; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 36px; }
+.btn { display: inline-flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 52px; padding: 16px 24px; border: 1px solid transparent; font-size: 12px; font-weight: 700; transition: background .2s, border-color .2s, transform .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-gold { background: var(--blue); color: #fff; }
+.btn-gold:hover { background: #0b7397; }
+.btn-outline { border-color: rgba(255,255,255,.65); color: #fff; background: transparent; }
+.btn-outline:hover { border-color: var(--blue-light); background: rgba(255,255,255,.08); }
+.hero-bottom { position: absolute; z-index: 2; bottom: 26px; left: var(--container-padding); right: var(--container-padding); display: flex; justify-content: space-between; gap: 20px; color: #d0dce1; font-size: 10px; letter-spacing: .14em; }
+
+/* 04. SHARED SECTIONS */
+.section { padding: clamp(75px, 8vw, 120px) var(--container-padding); }
+.section-tag.light { color: #82d6ee; }
+.text-link { display: inline-flex; align-items: center; border-bottom: 1px solid var(--blue); padding-bottom: 11px; margin-top: 16px; font-size: 13px; font-weight: 700; }
+.text-link:hover { color: var(--blue); }
+
+/* 05. ABOUT */
+.intro { background: #fff; }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: start; margin-top: 28px; }
+.intro h2, .approach h2 { font-size: clamp(38px, 4.8vw, 70px); line-height: 1.14; }
+.intro p { color: #586a73; font-size: 15px; line-height: 1.9; }
+.intro .lead { color: var(--ink); font-size: clamp(19px, 1.8vw, 23px); line-height: 1.65; }
+
+/* 06. SECTORS */
+.expertise { background: var(--navy); color: #fff; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 45px; margin-bottom: 42px; }
+.section-heading h2, .contact h2 { margin: 22px 0 0; font-size: clamp(36px, 4.4vw, 66px); line-height: 1.16; }
+.section-heading > p { max-width: 300px; margin: 0; color: #b7c6cd; line-height: 1.8; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.sector { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: space-between; min-height: 440px; overflow: hidden; padding: 27px; background-color: #243c48; background-size: cover; background-position: center; transition: transform .25s ease; }
+.sector:hover { transform: translateY(-5px); }
+.sector::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg,rgba(4,14,23,.96),transparent 78%), linear-gradient(rgba(6,21,32,.32),rgba(6,21,32,.18)); }
+.sector.mining { background-image: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=80'); }
+.sector.energy { background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80'); }
+.sector.infra { background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80'); }
+.sector-top { display: flex; justify-content: space-between; align-items: start; font-size: 12px; }
+.sector-top span { font-size: 23px; }
+.sector-bottom h3 { margin-bottom: 8px; font-size: clamp(23px, 2vw, 29px); }
+.sector-bottom p { margin: 0; color: #e0e9ed; font-size: 13px; }
+.sector-note { margin: 20px 0 0; color: #9cb1bb; font-size: 11px; }
+
+/* 07. APPROACH */
+.approach { background: #edf3f5; }
+.approach-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10%; margin-top: 26px; }
+.values > div { display: grid; grid-template-columns: 55px 1fr; column-gap: 12px; padding: 23px 0; border-bottom: 1px solid #cddae0; }
+.values > div:first-child { padding-top: 0; }
+.values span { grid-row: span 2; color: var(--blue); font-size: 13px; font-weight: 700; }
+.values h3 { margin-bottom: 7px; font-size: 18px; }
+.values p { margin: 0; color: #63737c; font-size: 13px; line-height: 1.7; }
+
+/* 08. CONTACT */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8%; align-items: start; background: #142631; color: #fff; }
+.contact-copy > p { max-width: 440px; margin-top: 24px; color: #b9cbd2; line-height: 1.8; }
+.contact-rule { height: 1px; margin: 65px 0 22px; background: rgba(255,255,255,.2); }
+.contact-copy > span { color: #87d3e8; font-size: 10px; letter-spacing: .14em; }
+.contact-form { min-width: 0; padding: clamp(24px, 3vw, 42px); background: #fff; border-radius: var(--radius); color: var(--ink); box-shadow: 0 20px 55px rgba(0,0,0,.14); }
+.contact-form h3 { margin-bottom: 25px; font-size: 23px; }
+.contact-form form { display: flex; flex-direction: column; }
+.contact-form label { margin-bottom: 7px; font-size: 12px; font-weight: 700; }
+.contact-form input, .contact-form textarea, .contact-form select { display: block; width: 100%; min-width: 0; margin-bottom: 17px; padding: 13px 14px; border: 1px solid #cddbe1; border-radius: 6px; background: #fff; color: var(--ink); font-size: 14px; outline-color: var(--blue); }
+.contact-form textarea { min-height: 130px; resize: vertical; }
+.contact-form .btn { margin-top: 7px; width: 100%; }
+.success { margin-bottom: 18px; padding: 12px; border-radius: 5px; background: #e2f4eb; color: #1c633f; font-size: 13px; }
+.error, .errorlist { color: #a32929; font-size: 12px; }
+.errorlist { padding-left: 18px; }
+
+/* 09. FOOTER */
+footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding: 30px var(--container-padding); background: var(--navy-deep); color: #fff; }
+footer .logo { font-size: 20px; }
+footer .signure-logo { width: 125px; height: 78px; object-fit: contain; }
+footer p, footer > span { margin: 0; color: #aabac2; font-size: 11px; }
+
+/* 10. RESPONSIVE */
+@media (max-width: 900px) {
+  .topbar nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 18px; padding: 25px var(--container-padding); background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,.12); }
+  .topbar nav.open { display: flex; }
+  .menu { display: block; }
+  .hero { min-height: 690px; height: 90vh; }
+  .hero-inner { padding-top: 150px; }
+  .intro-grid, .approach-grid, .contact { grid-template-columns: 1fr; gap: 32px; }
+  .section-heading { display: block; }
+  .section-heading > p { margin-top: 20px; max-width: 520px; }
+  .cards { grid-template-columns: 1fr; }
+  .sector { min-height: 360px; }
+  .contact-rule { margin-top: 35px; }
+}
+@media (max-width: 600px) {
+  .topbar { padding-top: 10px; padding-bottom: 10px; }
+  .topbar .signure-logo { width: 112px; height: 64px; }
+  .hero { min-height: 650px; height: auto; }
+  .hero-inner { padding-top: 165px; padding-bottom: 110px; }
+  .hero h1 { font-size: clamp(39px, 10vw, 55px); overflow-wrap: break-word; }
+  .hero-bottom { font-size: 9px; }
+  .hero-bottom span:last-child { display: none; }
+  .hero-actions { align-items: stretch; }
+  .hero-actions .btn { width: 100%; }
+  .section { padding-top: 70px; padding-bottom: 70px; }
+  .contact-form { padding: 24px 20px; }
+  footer { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.company-identity {
+    border-left: 3px solid #118db3;
+    padding-left: 18px;
+    max-width: 540px;
+}
+
+@media (max-width: 1250px) {
+    .company-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 850px) {
+    .company-name {
+        font-size: 10px;
+    }
+}
+
+.company-name {
+    display: block;
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1250px) {
+    .brand-container {
+        gap: 12px;
+    }
+
+    .company-identity {
+        padding-left: 12px;
+    }
+
+    .company-name {
+        font-size: 10px;
+        letter-spacing: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .company-name {
+        font-size: 9px;
+    }
+}
+
+/* PAGES INTÉRIEURES SIGNURE */
+
+.inner-page {
+    min-height: 100vh;
+    background: #07141c;
+    color: white;
+    padding: 220px 8% 100px;
+}
+
+.inner-page h1 {
+    font-size: clamp(42px, 6vw, 80px);
+    margin-bottom: 35px;
+}
+
+.inner-page h1 em {
+    color: #27add0;
+}
+
+.inner-page p {
+    max-width: 800px;
+    color: #c5d1d6;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.expertise-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.expertise-list article {
+    background: #132b38;
+    padding: 35px;
+    border-top: 3px solid #118db3;
+}
+
+.expertise-list h2 {
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .inner-page {
+        padding: 170px 6% 70px;
+    }
+
+    .expertise-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   SIGNURE - STRUCTURE COMMUNE
+======================================== */
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    min-width: 0;
+}
+
+.brand-container .signure-brand {
+    flex-shrink: 0;
+}
+
+.company-identity {
+    border-left: 2px solid #20a9cd;
+    padding-left: 20px;
+}
+
+.company-name {
+    display: block;
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(12px, 1vw, 17px);
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.topbar nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.topbar nav a {
+    white-space: nowrap;
+}
+
+.site-footer {
+    background: #07141c;
+    color: #ffffff;
+}
+
+.site-footer .signure-logo {
+    width: 100px;
+    height: 75px;
+    object-fit: contain;
+}
+
+/* Évite que les titres soient masqués
+   par le menu sur les pages intérieures */
+
+.inner-page {
+    padding-top: 220px;
+}
+
+/* TABLETTES ET MOBILES */
+
+@media (max-width: 1200px) {
+
+    .brand-container {
+        gap: 14px;
+    }
+
+    .company-name {
+        font-size: 12px;
+    }
+
+    .topbar nav {
+        gap: 15px;
+    }
+
+    .topbar nav a {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 1050px) {
+
+    .topbar nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 25px 6%;
+        background: #07141c;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topbar nav.open {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .company-name {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .company-identity {
+        padding-left: 10px;
+    }
+
+    .company-name {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .brand-container {
+        gap: 10px;
+    }
+
+    .topbar .signure-logo {
+        width: 65px;
+        height: 60px;
+    }
+
+    .inner-page {
+        padding-top: 170px;
+    }
+}
+
+
+/* ==========================================
+   SIGNURE - PAGE À PROPOS
+========================================== */
+
+/* PRÉSENTATION */
+
+.about-content {
+    max-width: 950px;
+    margin-top: 45px;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+    color: #e1e8ec;
+}
+
+.about-content strong {
+    color: #23add1;
+    font-weight: 800;
+}
+
+/* ==========================================
+   NOTRE VISION
+========================================== */
+
+.vision-section {
+    margin-top: 110px;
+    padding-top: 75px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.vision-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -2px;
+    margin: 25px 0 35px;
+}
+
+.vision-title em {
+    color: #23add1;
+    font-style: normal;
+}
+
+.vision-intro {
+    max-width: 950px;
+    color: #e1e8ec;
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.vision-subtitle {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+
+/* TROIS PILIERS */
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.vision-card {
+    background: #132d3b;
+    padding: 35px;
+    border-top: 3px solid #23add1;
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-6px);
+    background: #193a4a;
+}
+
+.vision-number {
+    display: block;
+    color: #23add1;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.vision-card h3 {
+    font-family: 'Manrope', sans-serif;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.vision-card p {
+    color: #d5e0e5;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* DÉCLARATION FINALE */
+
+.vision-statement {
+    max-width: 1050px;
+    margin-top: 65px;
+    padding: 30px 35px;
+    border-left: 4px solid #23add1;
+    background: rgba(35,173,209,0.07);
+}
+
+.vision-statement p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.vision-statement strong {
+    color: #23add1;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-section {
+        margin-top: 70px;
+        padding-top: 50px;
+    }
+
+    .vision-card {
+        padding: 28px;
+    }
+
+    .vision-intro,
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .vision-statement p {
+        font-size: 17px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .vision-title {
+        letter-spacing: -1px;
+    }
+
+    .vision-statement {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* ==========================================
+   SIGNURE - IMAGE À DROITE DU TEXTE
+========================================== */
+
+.about-section .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    margin-top: 45px;
+}
+
+.about-section .about-content {
+    margin-top: 0;
+    max-width: none;
+    min-width: 0;
+}
+
+.about-section .about-image {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(35, 173, 209, 0.3);
+}
+
+.about-section .about-image img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* TABLETTES ET TÉLÉPHONES */
+
+@media (max-width: 900px) {
+
+    .about-section .about-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-section .about-image img {
+        height: 300px;
+    }
+
+}
+
+
+/* ==========================================
+   SIGNURE — NOTRE ENGAGEMENT
+========================================== */
+
+.engagement-section {
+    margin-top: 110px;
+    padding-top: 75px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.engagement-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -2px;
+    margin: 25px 0 35px;
+}
+
+.engagement-title em {
+    color: #23add1;
+    font-style: normal;
+}
+
+.engagement-intro {
+    max-width: 950px;
+    font-size: 19px;
+    line-height: 1.9;
+    color: #e1e8ec;
+    margin-bottom: 35px;
+}
+
+/* LES QUATRE ENGAGEMENTS */
+
+.engagement-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.engagement-card {
+    background: #132d3b;
+    border-top: 3px solid #23add1;
+    padding: 30px 25px;
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.engagement-card:hover {
+    transform: translateY(-6px);
+    background: #193a4a;
+}
+
+.engagement-number {
+    display: block;
+    color: #23add1;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.engagement-card h3 {
+    font-family: 'Manrope', sans-serif;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.engagement-card p {
+    color: #d5e0e5;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* CONCLUSION */
+
+.engagement-conclusion {
+    margin-top: 55px;
+    padding: 30px 35px;
+    background: rgba(35, 173, 209, 0.07);
+    border-left: 4px solid #23add1;
+}
+
+.engagement-conclusion p {
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .engagement-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .engagement-section {
+        margin-top: 70px;
+        padding-top: 50px;
+    }
+
+    .engagement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .engagement-card {
+        padding: 25px;
+    }
+
+    .engagement-intro,
+    .engagement-conclusion p {
+        font-size: 16px;
+    }
+
+    .engagement-title {
+        letter-spacing: -1px;
+    }
+}
+
+
+/* ==========================================
+   SIGNURE — DOMAINES D'EXCELLENCE
+========================================== */
+
+.excellence-section,
+.distinction-section {
+    margin-top: 100px;
+    padding-top: 65px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.expertise-section-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 25px 0 45px;
+    letter-spacing: -1.5px;
+}
+
+.expertise-section-title em {
+    color: #23add1;
+    font-style: normal;
+}
+
+.excellence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.excellence-card {
+    background: #132d3b;
+    border-top: 3px solid #23add1;
+    padding: 35px 30px;
+    min-width: 0;
+}
+
+.excellence-number {
+    display: block;
+    color: #23add1;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.excellence-card h3 {
+    font-family: 'Manrope', sans-serif;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.excellence-card p {
+    color: #d5e0e5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.excellence-card ul {
+    padding-left: 20px;
+    margin: 25px 0;
+}
+
+.excellence-card li {
+    color: #e1e8ec;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.excellence-card li::marker {
+    color: #23add1;
+}
+
+.excellence-footer {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 22px;
+    margin-top: 25px;
+}
+
+/* ==========================================
+   CE QUI NOUS DISTINGUE
+========================================== */
+
+.distinction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.distinction-card {
+    background: #102733;
+    padding: 32px;
+    border: 1px solid rgba(35,173,209,0.18);
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.distinction-card:hover {
+    transform: translateY(-5px);
+    border-color: #23add1;
+}
+
+.distinction-card span {
+    display: block;
+    color: #23add1;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.distinction-card h3 {
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.distinction-card p {
+    color: #d5e0e5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+    .excellence-grid,
+    .distinction-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .excellence-grid,
+    .distinction-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .excellence-section,
+    .distinction-section {
+        margin-top: 65px;
+        padding-top: 45px;
+    }
+
+    .excellence-card,
+    .distinction-card {
+        padding: 25px;
+    }
+}
+
+
+/* ==========================================
+   SIGNURE — NOTRE APPROCHE
+========================================== */
+
+.approach-description {
+    max-width: 1000px;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #e1e8ec;
+    margin-top: 35px;
+}
+
+.approach-method,
+.approach-principles {
+    margin-top: 100px;
+    padding-top: 65px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.approach-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 25px 0 45px;
+}
+
+.approach-title em {
+    color: #23add1;
+    font-style: normal;
+}
+
+/* LES SIX ÉTAPES */
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.approach-card {
+    background: #132d3b;
+    border-top: 3px solid #23add1;
+    padding: 35px;
+    transition: transform 0.3s ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-5px);
+}
+
+.approach-card span {
+    display: block;
+    color: #23add1;
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.approach-card h3 {
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.approach-card p {
+    color: #d5e0e5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* NOS PRINCIPES */
+
+.approach-principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.approach-principle {
+    background: #102733;
+    padding: 35px;
+    border: 1px solid rgba(35,173,209,0.2);
+}
+
+.approach-principle h3 {
+    color: #23add1;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.approach-principle p {
+    color: #d5e0e5;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* CONCLUSION */
+
+.approach-conclusion {
+    margin-top: 65px;
+    padding: 35px;
+    background: rgba(35,173,209,0.07);
+    border-left: 4px solid #23add1;
+}
+
+.approach-conclusion p {
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .approach-grid,
+    .approach-principles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .approach-grid,
+    .approach-principles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .approach-method,
+    .approach-principles {
+        margin-top: 65px;
+        padding-top: 45px;
+    }
+
+    .approach-card,
+    .approach-principle {
+        padding: 25px;
+    }
+
+    .approach-description,
+    .approach-conclusion p {
+        font-size: 16px;
+    }
+}
+
+
+/* ==========================================
+   SIGNURE — AJUSTEMENTS ACCUEIL
+========================================== */
+
+/* Bouton vers la page Expertises */
+
+.home-expertise-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+/* Grille spécifique à l'accueil */
+
+.home-approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+/* Titres */
+
+.home-approach-grid h2 {
+    margin-top: 0;
+}
+
+/* Liens */
+
+.home-approach-grid .text-link {
+    display: inline-flex;
+    margin-top: 30px;
+}
+
+/* Navigation vers les sections */
+
+#accueil,
+#apropos,
+#expertises,
+#approche,
+#contact {
+    scroll-margin-top: 100px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .home-approach-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .home-expertise-link {
+        justify-content: flex-start;
+    }
+
+}
+
+/* Confirmation du formulaire SIGNURE */
+
+.contact-form .success {
+    background: rgba(35, 173, 209, 0.12);
+    border-left: 4px solid #23add1;
+    color: #ffffff;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.contact-form .warning {
+    background: rgba(255, 193, 7, 0.12);
+    border-left: 4px solid #ffc107;
+    color: #ffffff;
+    padding: 16px 20px;
+    margin: 20px 0;
+}
+
+/* Messages de confirmation du formulaire SIGNURE */
+
+.contact-form .alert,
+.contact-form .message,
+.contact-form .messages {
+    color: #12303d;
+}
+
+.contact-form .alert-success,
+.contact-form .alert-warning {
+    background-color: #e2f4f8;
+    color: #12303d;
+    border-left: 4px solid #23add1;
+    padding: 18px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* Correction du message de confirmation SIGNURE */
+
+#contact .messages,
+#contact .messages *,
+#contact .alert,
+#contact .alert *,
+#contact .message,
+#contact .message * {
+    color: #12303d !important;
+}
+
+#contact .messages,
+#contact .alert,
+#contact .message {
+    background-color: #e2f4f8;
+    border-left: 4px solid #23add1;
+}
+
+/* Message de confirmation du formulaire SIGNURE */
+
+.contact-form .success {
+    background-color: #e2f4f8 !important;
+    color: #12303d !important;
+    border-left: 4px solid #23add1;
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+.contact-form .warning {
+    background-color: #fff3e0;
+    color: #8a4b08;
+    border-left: 4px solid #e6a23c;
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* ==================================
+   SÉLECTEUR DE LANGUE FR / EN
+================================== */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin: 0 0 0 12px;
+    white-space: nowrap;
+}
+
+.language-switcher button {
+    background: transparent;
+    border: none;
+    padding: 5px 3px;
+    color: #a9bac4;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.language-switcher button.active {
+    color: #23add1;
+}
+
+.language-switcher button:hover {
+    color: #ffffff;
+}
+
+.language-switcher span {
+    color: #607783;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .language-switcher {
+        margin: 15px 0 5px;
+        justify-content: flex-start;
+    }
+}
+
+/* EFFET REFLET - PHOTO À PROPOS */
+
+.signure-photo-reflet {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    isolation: isolate;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.signure-photo-reflet img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Reflet lumineux */
+.signure-photo-reflet::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 35%,
+        rgba(255, 255, 255, 0.30) 50%,
+        rgba(255, 255, 255, 0.08) 65%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.8s ease;
+    pointer-events: none;
+}
+
+/* Animation au survol */
+.signure-photo-reflet:hover::after {
+    left: 150%;
+}
+
+.signure-photo-reflet:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .signure-photo-reflet img,
+    .signure-photo-reflet::after {
+        transition: none;
+    }
+}
+
+/* REFLET LUMINEUX ANIMÉ - PHOTO À PROPOS */
+
+.signure-photo-reflet {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    isolation: isolate;
+    box-shadow:
+        0 0 20px rgba(35, 173, 209, 0.25),
+        0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.signure-photo-reflet img {
+    display: block;
+    width: 100%;
+    transition: transform 0.6s ease;
+}
+
+.signure-photo-reflet::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: refletSignure 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes refletSignure {
+    0%, 25% {
+        left: -80%;
+    }
+
+    65%, 100% {
+        left: 150%;
+    }
+}
+
+.signure-photo-reflet:hover img {
+    transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .signure-photo-reflet::after {
+        animation: none;
+    }
+
+    .signure-photo-reflet img {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   PAGE EXPERTISES - TEXTE ET PHOTO
+========================================== */
+
+.expertise-intro-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.expertise-intro-text {
+    min-width: 0;
+}
+
+.expertise-intro-text .expertise-intro {
+    max-width: 100%;
+    margin: 0;
+    line-height: 1.9;
+}
+
+.expertise-intro-layout .about-image {
+    width: 100%;
+    height: 400px;
+}
+
+.expertise-intro-layout .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Adaptation aux téléphones et tablettes */
+
+@media (max-width: 900px) {
+    .expertise-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 35px;
+        margin-bottom: 55px;
+    }
+
+    .expertise-intro-layout .about-image {
+        height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .expertise-intro-layout .about-image {
+        height: 240px;
+    }
+}
+
+
+/* ==========================================
+   PAGE NOTRE APPROCHE - TEXTE ET PHOTO
+========================================== */
+
+.approach-intro-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.approach-intro-text {
+    min-width: 0;
+}
+
+.approach-intro-text .approach-description {
+    max-width: 100%;
+    margin: 0;
+    line-height: 1.9;
+}
+
+.approach-intro-layout .about-image {
+    width: 100%;
+    height: 400px;
+}
+
+.approach-intro-layout .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* TABLETTES ET TÉLÉPHONES */
+
+@media (max-width: 900px) {
+    .approach-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 35px;
+        margin-bottom: 55px;
+    }
+
+    .approach-intro-layout .about-image {
+        height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .approach-intro-layout .about-image {
+        height: 240px;
+    }
+}
+
+
+/* ==========================================
+   NOS CLIENTS ET PARTENAIRES - SIGNURE
+========================================== */
+
+.partners-section {
+    padding: 90px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.partners-title {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 20px 0 25px;
+}
+
+.partners-title em {
+    color: #23add1;
+    font-style: normal;
+}
+
+.partners-intro {
+    max-width: 800px;
+    color: #d5e1e7;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 45px;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.partners-card {
+    position: relative;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    transition: transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.partners-card:hover {
+    transform: translateY(-6px);
+    border-color: #23add1;
+    box-shadow: 0 15px 35px rgba(35, 173, 209, 0.12);
+}
+
+.partners-number {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #23add1;
+    margin-bottom: 20px;
+}
+
+.partners-card h3 {
+    font-size: 21px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.partners-card p {
+    color: #c0cdd5;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.partners-conclusion {
+    margin-top: 40px;
+    padding: 25px 30px;
+    border-left: 3px solid #23add1;
+    background: rgba(35, 173, 209, 0.05);
+}
+
+.partners-conclusion p {
+    color: #e0eaf0;
+    line-height: 1.9;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partners-card {
+        padding: 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .partners-card {
+        transition: none;
+    }
+
+    .partners-card:hover {
+        transform: none;
+    }
+}
+
+
+/* ==========================================
+   TRAVAILLONS ENSEMBLE - PAGE ACCUEIL
+========================================== */
+
+.collaboration-section {
+    padding: 110px 8%;
+    background: #07151d;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.collaboration-title {
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 20px 0 45px;
+}
+
+.collaboration-title em {
+    color: #23add1;
+    font-style: normal;
+}
+
+.collaboration-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 15px 35px 15px 40px;
+    border-left: 4px solid #23add1;
+}
+
+.collaboration-content p {
+    color: #dce8ee;
+    font-size: clamp(17px, 1.8vw, 23px);
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.collaboration-link {
+    display: inline-block;
+    color: #23add1;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.collaboration-link:hover {
+    color: #ffffff;
+}
+
+.collaboration-link span {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .collaboration-section {
+        padding: 70px 6%;
+    }
+
+    .collaboration-content {
+        padding: 10px 15px 10px 22px;
+    }
+
+    .collaboration-link {
+        font-size: 16px;
+    }
+}
+
+
+/* ==========================================
+   SIGNURE - IMPLANTATIONS
+========================================== */
+
+.implantations-header {
+    margin-bottom: 65px;
+}
+
+.implantations-header p {
+    max-width: 760px;
+    color: #d5e1e7;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.implantations-list {
+    display: grid;
+    gap: 60px;
+    padding-bottom: 90px;
+}
+
+.implantation-card {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(7, 21, 29, 0.45),
+            rgba(7, 21, 29, 0.65)
+        ),
+        #173543;
+    background-size: cover;
+    background-position: center;
+}
+
+.implantation-info {
+    width: 100%;
+    max-width: 720px;
+    padding: 40px 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 10px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.implantation-info h2 {
+    color: #07151d;
+    font-size: clamp(23px, 3vw, 34px);
+    margin-bottom: 22px;
+}
+
+.implantation-info p {
+    color: #52616c;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.implantation-info a {
+    display: block;
+    color: #123a50;
+    text-decoration: none;
+    margin: 12px 0;
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.implantation-info a:hover {
+    color: #23add1;
+}
+
+.implantation-info a.whatsapp-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 28px;
+    background: #128c4b;
+    color: white;
+    font-weight: 700;
+    border-radius: 7px;
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.implantation-info a.whatsapp-button:hover {
+    background: #0c6b39;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.implantation-info a.whatsapp-button:focus-visible {
+    outline: 3px solid #23add1;
+    outline-offset: 4px;
+}
+
+.implantation-status {
+    color: #23add1 !important;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .implantations-list {
+        gap: 35px;
+    }
+
+    .implantation-card {
+        min-height: 320px;
+        padding: 20px 12px;
+    }
+
+    .implantation-info {
+        padding: 30px 18px;
+    }
+
+    .implantation-info a.whatsapp-button {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .implantation-info a.whatsapp-button {
+        transition: none;
+    }
+
+    .implantation-info a.whatsapp-button:hover {
+        transform: none;
+    }
+}
+
+
+/* ==========================================
+   PHOTOS DES IMPLANTATIONS SIGNURE
+========================================== */
+
+.implantation-burkina {
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.25),
+            rgba(7, 21, 29, 0.45)
+        ),
+        url("signure_burkina_nouveau.jpg");
+}
+
+.implantation-ivoire {
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.25),
+            rgba(7, 21, 29, 0.45)
+        ),
+        url("signure_ivoire.jpg");
+}
+
+.implantation-guinee {
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.25),
+            rgba(7, 21, 29, 0.45)
+        ),
+        url("signure_guinee.jpg");
+}
+
+.implantation-usa {
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.25),
+            rgba(7, 21, 29, 0.45)
+        ),
+        url("signure_usa.jpg");
+}
+
+.implantation-uae {
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.25),
+            rgba(7, 21, 29, 0.45)
+        ),
+        url("signure_uae.jpg");
+}
+
+/* AFFICHAGE DES PHOTOS */
+
+.implantation-card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* DRAPEAUX DES IMPLANTATIONS */
+
+.implantation-info h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.country-flag {
+    width: 42px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   AMÉLIORATION DES PHOTOS - IMPLANTATIONS
+========================================== */
+
+.implantation-card {
+    min-height: 480px;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Ajustement individuel des photos */
+
+.implantation-burkina {
+    background-position: center 45%;
+}
+
+.implantation-ivoire {
+    background-position: center 50%;
+}
+
+.implantation-guinee {
+    background-position: center 55%;
+}
+
+.implantation-usa {
+    background-position: center 50%;
+}
+
+.implantation-uae {
+    background-position: center 55%;
+}
+
+/* Version mobile */
+
+@media (max-width: 768px) {
+    .implantation-card {
+        min-height: 380px;
+        background-position: center;
+    }
+}
+
+.hero h1 {
+    font-size: clamp(42px, 4.8vw, 76px);
+    line-height: 1.15;
+    max-width: 950px;
+}
+
+
+/* SIGNURE - Lisibilité du texte d'accueil */
+
+.hero-inner > p {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+.hero h1 {
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* SIGNURE - Background À propos */
+
+.page-hero--about {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(7, 21, 29, 0.78) 0%,
+            rgba(7, 21, 29, 0.38) 55%,
+            rgba(7, 21, 29, 0.08) 100%
+        ),
+        url("hero-apropos.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* ==========================================
+   SIGNURE - BACKGROUND GLOBAL PAGE À PROPOS
+========================================== */
+
+.inner-page.about-page {
+    position: relative;
+    isolation: isolate;
+
+
+background-image:
+    linear-gradient(
+        rgba(7, 21, 29, 0.52),
+        rgba(7, 21, 29, 0.65)
+    ),
+    url("hero-apropos.png");
+
+background-size: cover;
+background-position: center top;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
+/* Sections transparentes pour voir le fond */
+
+
+/* ==========================================
+   SIGNURE - CARTES CLIENTS ET PARTENAIRES
+========================================== */
+
+.about-page .partners-section .partner-card {
+    background: rgba(15, 42, 57, 0.96);
+
+    border: none;
+    border-top: 3px solid #23add1;
+    border-radius: 0;
+
+    padding: 35px 28px;
+    min-height: 190px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: none;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.about-page .partners-section .partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Numérotation */
+
+.about-page .partners-section .partner-card .partner-number {
+    color: #23add1;
+    font-weight: 700;
+}
+
+/* Titres */
+
+.about-page .partners-section .partner-card h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0 15px;
+}
+
+/* Descriptions */
+
+.about-page .partners-section .partner-card p {
+    color: #d5e1e7;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   SIGNURE - HARMONISATION DES PARTENAIRES
+========================================== */
+
+.about-page .partners-section .partners-card {
+    background: #122e3d;
+
+    border: none;
+    border-top: 3px solid #23add1;
+    border-radius: 0;
+
+    padding: 35px 28px;
+    min-height: 190px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: none;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+
+.about-page .partners-section .partners-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Numéros */
+
+.about-page .partners-section .partners-number {
+    color: #23add1;
+    font-weight: 700;
+}
+
+/* Titres */
+
+.about-page .partners-section .partners-card h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0 15px;
+}
+
+/* Descriptions */
+
+.about-page .partners-section .partners-card p {
+    color: #d5e1e7;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* SIGNURE - BACKGROUND GLOBAL EXPERTISES */
+
+.inner-page.expertises-page {
+    min-height: 100vh;
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.58),
+            rgba(7, 21, 29, 0.72)
+        ),
+        url("hero-expertises.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Sections transparentes pour conserver le fond */
+
+.expertises-page .expertises-section {
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    .inner-page.expertises-page {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+}
+
+
+/* Garder les textes lisibles */
+
+.about-page .about-section h1,
+.about-page .about-section h2,
+.about-page .partners-section h2 {
+    color: #ffffff;
+}
+
+.about-page .about-content p {
+    color: #e5edf2;
+    line-height: 1.9;
+}
+
+/* Adaptation aux téléphones */
+
+@media (max-width: 768px) {
+    .inner-page.about-page {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+}
+
+
+/* Cartes de la page À propos */
+
+.about-page .partners-section .partner-card {
+    background: rgba(12, 35, 49, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+}
+
+
+/* ==========================================
+   SIGNURE - TEXTE BLANC PLUS INTENSE
+   PAGE À PROPOS
+========================================== */
+
+/* Titre principal */
+.about-page .about-section .about-editorial-title {
+    color: #ffffff;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* SIGNURE reste turquoise */
+.about-page .about-editorial-title em {
+    color: #23add1;
+}
+
+/* Phrase d'introduction */
+.about-page .about-editorial-lead {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+}
+
+/* Paragraphes de présentation */
+.about-page .about-content p,
+.about-page .about-content p:first-child {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.70);
+}
+
+/* Nom de l'entreprise */
+.about-page .about-content strong {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+
+/* ==========================================
+   SIGNURE - TYPOGRAPHIE GLOBALE
+   BLANC INTENSE SUR TOUTES LES PAGES
+========================================== */
+
+/* Paragraphes des pages à fond sombre */
+
+.inner-page p,
+.hero-inner p,
+.hero-content p {
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0.1px;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+/* Titres principaux et secondaires */
+
+.inner-page h1,
+.inner-page h2,
+.inner-page h3 {
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Conserver les accents turquoise */
+
+.inner-page h1 em,
+.inner-page h2 em,
+.inner-page h3 em {
+    color: #23add1;
+}
+
+/* Texte important */
+
+.inner-page strong,
+.hero-inner strong,
+.hero-content strong {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+/* Éléments de présentation */
+
+.inner-page .section-tag {
+    color: #23add1;
+    text-shadow: none;
+}
+
+/* Adaptation mobile */
+
+@media (max-width: 768px) {
+    .inner-page p,
+    .hero-inner p,
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+/* ==========================================
+   SIGNURE - EXCEPTION CARTES BLANCHES
+========================================== */
+
+.inner-page .implantation-info h2 {
+    color: #07151d;
+    text-shadow: none;
+}
+
+.inner-page .implantation-info p {
+    color: #344b59;
+    font-weight: 500;
+    text-shadow: none;
+}
+
+/* Préserver les textes des boutons */
+.inner-page .implantation-info .whatsapp-button {
+    color: #ffffff;
+}
+
+/* ==========================================
+   SIGNURE — HARMONISATION DES TEXTES
+   Blanc intense sur les fonds sombres
+========================================== */
+
+:root {
+    --signure-white: #ffffff;
+    --signure-turquoise: #23add1;
+    --signure-night: #07151d;
+}
+
+/* Textes des pages intérieures */
+.inner-page p,
+.inner-page li,
+.inner-page .about-content p,
+.inner-page .vision-intro,
+.inner-page .engagement-intro,
+.inner-page .partners-intro,
+.inner-page .partners-card p,
+.inner-page .partners-conclusion p,
+.inner-page .vision-card p,
+.inner-page .engagement-card p,
+.inner-page .excellence-card p,
+.inner-page .excellence-card li,
+.inner-page .distinction-card p,
+.inner-page .approach-description,
+.inner-page .approach-card p,
+.inner-page .approach-principle p,
+.inner-page .implantations-header p {
+    color: var(--signure-white);
+}
+
+/* Titres et accents */
+.inner-page h1,
+.inner-page h2,
+.inner-page h3 {
+    color: var(--signure-white);
+}
+
+.inner-page h1 em,
+.inner-page h2 em,
+.inner-page h3 em,
+.inner-page .section-tag {
+    color: var(--signure-turquoise);
+}
+
+/* Accueil : zones sombres uniquement */
+.hero-inner > p,
+.expertise .section-heading > p,
+.sector-bottom p,
+.sector-note,
+.contact-copy > p,
+.collaboration-content p {
+    color: var(--signure-white);
+}
+
+/* Conserver les textes sombres sur fond clair */
+.inner-page .implantation-info h2 {
+    color: var(--signure-night);
+    text-shadow: none;
+}
+
+.inner-page .implantation-info p {
+    color: #344b59;
+    text-shadow: none;
+}
+
+/* Conserver les accents turquoise des cartes */
+.inner-page .implantation-info .implantation-status {
+    color: var(--signure-turquoise);
+}
+
+/* Conserver les boutons WhatsApp */
+.inner-page .implantation-info .whatsapp-button {
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   SIGNURE - BACKGROUND NOTRE APPROCHE
+========================================== */
+
+.inner-page.approche-page {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.20),
+            rgba(7, 21, 29, 0.35)
+        ),
+        url("hero-approche.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Préserver le background derrière les sections */
+.approche-page .approach-intro {
+    background-color: transparent;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .inner-page.approche-page {
+        background-attachment: scroll;
+        background-position: center;
+    }
+}
+
+
+/* SIGNURE - Lisibilité Notre approche */
+
+.approche-page .approach-description {
+    max-width: 780px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0.1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 768px) {
+    .approche-page .approach-description {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+\
+/* ==========================================
+   SIGNURE - NOUVELLES IMAGES IMPLANTATIONS
+========================================== */
+
+/* Burkina Faso */
+.implantation-burkina {
+    background-image:
+        url("signure_burkina_nouveau.jpg");
+}
+
+/* Côte d'Ivoire */
+.implantation-ivoire {
+    background-image:
+        url("signure_ivoire_nouveau.jpg");
+}
+
+/* Guinée-Conakry */
+.implantation-guinee {
+    background-image:
+        url("signure_guinee_nouveau.jpg");
+}
+
+/* États-Unis */
+.implantation-usa {
+    background-image:
+        url("signure_usa_nouveau.jpg");
+}
+
+/* Émirats arabes unis */
+.implantation-uae {
+    background-image:
+        url("signure_uae_nouveau.jpg");
+}
+
+/* Images nettes et bien positionnées */
+.implantation-card {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+/* Cartes blanches sans flou */
+.implantation-info {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+
+/* ==========================================
+   SIGNURE - CORRECTION BURKINA FASO
+========================================== */
+
+.implantation-card.implantation-burkina {
+    background-image: url("signure_burkina_nouveau.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/* ==========================================
+   SIGNURE — BACKGROUND NOS IMPLANTATIONS
+========================================== */
+
+.inner-page.implantations-page {
+    min-height: 100vh;
+
+    background-image:
+        radial-gradient(
+            ellipse at 75% 15%,
+            rgba(35, 173, 209, 0.15),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(7, 21, 29, 0.96),
+            rgba(12, 43, 60, 0.91),
+            rgba(7, 21, 29, 0.97)
+        );
+
+    background-color: #07151d;
+}
+
+/* En-tête des implantations */
+
+.implantations-page .implantations-header {
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
+/* Les photos des pays restent visibles */
+
+.implantations-page .implantation-card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Les cartes de contact restent blanches */
+
+.implantations-page .implantation-info {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Adaptation mobile */
+
+@media (max-width: 768px) {
+    .implantations-page .implantations-header {
+        padding-top: 20px;
+    }
+}
+
+
+/* ==========================================
+   SIGNURE - BACKGROUND NOS IMPLANTATIONS
+========================================== */
+
+.inner-page.implantations-page {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(7, 21, 29, 0.55),
+            rgba(7, 21, 29, 0.72)
+        ),
+        url("hero-implantations.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #07151d;
+}
+
+/* Préserver les photos des cinq pays */
+.implantations-page .implantation-card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Garder les cartes de contact blanches */
+.implantations-page .implantation-info {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .inner-page.implantations-page {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+}
+
+/* ESPACEMENT ENTRE LES CARTES ET LA CONCLUSION
+   PAGE NOS EXPERTISES */
+
+.expertises-page .expertise-conclusion {
+    margin-top: 60px;
+    padding-bottom: 30px;
+}
+
+
+/* =====================================
+   BOUTON RETOUR EN HAUT — SIGNURE
+===================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #23add1;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 28px;
+    font-weight: 600;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #168eaf;
+    transform: translateY(-4px);
+}
+
+.back-to-top:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 46px;
+        height: 46px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   BOUTON CONTACT FLOTTANT — SIGNURE
+========================================= */
+
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9998;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    background: #23add1;
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.floating-contact:hover {
+    background: #168eaf;
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+}
+
+.floating-contact:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.floating-contact-icon {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.floating-contact-text {
+    white-space: nowrap;
+}
+
+/* VERSION MOBILE */
+
+@media (max-width: 768px) {
+    .floating-contact {
+        bottom: 20px;
+        left: 16px;
+        padding: 12px 16px;
+        font-size: 12px;
+        gap: 7px;
+    }
+
+    .floating-contact-icon {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-contact {
+        transition: none;
+    }
+}
+/* Masquer le bouton Contact lorsque le footer apparaît */
+
+.floating-contact.contact-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(15px);
+}

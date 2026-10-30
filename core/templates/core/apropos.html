@@ -1,0 +1,287 @@
+
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "À propos" %} — SIGNURE{% endblock %}
+
+{% block content %}
+
+<main class="inner-page about-page">
+
+    <!-- PRÉSENTATION DE L'ENTREPRISE -->
+    <section class="about-section">
+
+        <div class="section-tag">
+            {% trans "DÉCOUVRIR SIGNURE" %}
+        </div>
+
+        <h1>
+            {% trans "À propos de" %} <em>SIGNURE</em>
+        </h1>
+
+        <div class="about-layout">
+
+            <div class="about-content">
+
+                <p>
+                    {% blocktrans trimmed %}
+                    <strong>SIGNURE</strong> — Société Internationale
+                    de Gestion, de Négoce et d’Utilisation de Ressources —
+                    est une entreprise d’excellence opérant au cœur des
+                    secteurs stratégiques que sont l’énergie, les
+                    infrastructures, la construction et l’exploitation minière.
+                    {% endblocktrans %}
+                </p>
+
+                <p>
+                    {% blocktrans trimmed %}
+                    Nous nous positionnons comme un acteur polyvalent,
+                    agile et visionnaire, capable d’accompagner des projets
+                    à haut impact économique et industriel dans des
+                    environnements complexes et exigeants.
+                    {% endblocktrans %}
+                </p>
+
+                <p>
+                    {% blocktrans trimmed %}
+                    Avec une expertise éprouvée et une rigueur opérationnelle
+                    de haut niveau, SIGNURE développe, structure et exécute
+                    des solutions intégrées destinées aux gouvernements,
+                    aux grands groupes et aux opérateurs industriels
+                    d’envergure internationale.
+                    {% endblocktrans %}
+                </p>
+
+            </div>
+
+            <!-- Image désactivée dans le code original -->
+
+        </div>
+
+    </section>
+
+    <!-- NOTRE VISION -->
+    <section class="vision-section">
+
+        <div class="section-tag">
+            {% trans "NOTRE AMBITION" %}
+        </div>
+
+        <h2 class="vision-title">
+            {% trans "Notre" %} <em>{% trans "vision" %}</em>
+        </h2>
+
+        <p class="vision-intro">
+            {% blocktrans trimmed %}
+            Nous ambitionnons d’être le partenaire stratégique
+            de référence pour les institutions publiques et
+            privées engagées dans la transformation économique,
+            énergétique et infrastructurelle.
+            {% endblocktrans %}
+        </p>
+
+        <p class="vision-subtitle">
+            {% trans "Notre vision repose sur trois piliers essentiels :" %}
+        </p>
+
+        <div class="vision-grid">
+
+            <article class="vision-card">
+                <span class="vision-number">01</span>
+
+                <h3>{% trans "Excellence technique" %}</h3>
+
+                <p>
+                    {% blocktrans trimmed %}
+                    Dans la gestion d’opérations sensibles
+                    et multisectorielles.
+                    {% endblocktrans %}
+                </p>
+            </article>
+
+            <article class="vision-card">
+                <span class="vision-number">02</span>
+
+                <h3>{% trans "Performance opérationnelle" %}</h3>
+
+                <p>
+                    {% blocktrans trimmed %}
+                    Grâce à une exécution maîtrisée et
+                    des standards internationaux stricts.
+                    {% endblocktrans %}
+                </p>
+            </article>
+
+            <article class="vision-card">
+                <span class="vision-number">03</span>
+
+                <h3>{% trans "Intégrité absolue" %}</h3>
+
+                <p>
+                    {% blocktrans trimmed %}
+                    Pierre angulaire de chacune
+                    de nos collaborations.
+                    {% endblocktrans %}
+                </p>
+            </article>
+
+        </div>
+
+        <div class="vision-statement">
+            <p>
+                {% blocktrans trimmed %}
+                Chez <strong>SIGNURE</strong>, nous croyons
+                que la création de valeur durable naît
+                de l’alliance entre une expertise pointue,
+                une exécution irréprochable et une
+                gouvernance transparente.
+                {% endblocktrans %}
+            </p>
+        </div>
+
+    </section>
+
+    <!-- NOTRE ENGAGEMENT -->
+    <section class="engagement-section">
+
+        <div class="section-tag">
+            {% trans "NOTRE PROMESSE" %}
+        </div>
+
+        <h2 class="engagement-title">
+            {% trans "Notre" %} <em>{% trans "engagement" %}</em>
+        </h2>
+
+        <p class="engagement-intro">
+            {% blocktrans trimmed %}
+            SIGNURE s’engage à protéger les intérêts de ses
+            partenaires grâce à :
+            {% endblocktrans %}
+        </p>
+
+        <div class="engagement-grid">
+
+            <article class="engagement-card">
+                <span class="engagement-number">01</span>
+                <h3>{% trans "Exécution sans compromis" %}</h3>
+                <p>{% trans "Une exécution sans compromis." %}</p>
+            </article>
+
+            <article class="engagement-card">
+                <span class="engagement-number">02</span>
+                <h3>{% trans "Gestion optimale des risques" %}</h3>
+                <p>{% trans "Une gestion optimale des risques." %}</p>
+            </article>
+
+            <article class="engagement-card">
+                <span class="engagement-number">03</span>
+                <h3>{% trans "Résultats durables" %}</h3>
+                <p>{% trans "Des résultats mesurables et durables." %}</p>
+            </article>
+
+            <article class="engagement-card">
+                <span class="engagement-number">04</span>
+                <h3>{% trans "Qualité irréprochable" %}</h3>
+                <p>{% trans "Une qualité de service irréprochable." %}</p>
+            </article>
+
+        </div>
+
+        <div class="engagement-conclusion">
+            <p>
+                {% blocktrans trimmed %}
+                Nous investissons continuellement dans
+                l’innovation, les compétences et les technologies
+                afin de toujours dépasser les attentes.
+                {% endblocktrans %}
+            </p>
+        </div>
+
+    </section>
+
+    <!-- NOS CLIENTS ET PARTENAIRES -->
+    <section class="partners-section">
+
+        <div class="section-tag">
+            {% trans "NOS COLLABORATIONS STRATÉGIQUES" %}
+        </div>
+
+        <h2 class="partners-title">
+            {% trans "Nos clients et" %} <em>{% trans "partenaires" %}</em>
+        </h2>
+
+        <p class="partners-intro">
+            {% blocktrans trimmed %}
+            SIGNURE développe des relations de confiance avec
+            des acteurs institutionnels, industriels et financiers
+            de premier plan.
+            {% endblocktrans %}
+        </p>
+
+        <div class="partners-grid">
+
+            <article class="partners-card">
+                <span class="partners-number">01</span>
+                <h3>{% trans "Entreprises minières internationales" %}</h3>
+                <p>
+                    {% blocktrans trimmed %}
+                    Des entreprises engagées dans l'exploitation
+                    et la valorisation des ressources naturelles.
+                    {% endblocktrans %}
+                </p>
+            </article>
+
+            <article class="partners-card">
+                <span class="partners-number">02</span>
+                <h3>{% trans "Institutions gouvernementales" %}</h3>
+                <p>
+                    {% blocktrans trimmed %}
+                    Des institutions porteuses de programmes
+                    stratégiques de développement économique
+                    et industriel.
+                    {% endblocktrans %}
+                </p>
+            </article>
+
+            <article class="partners-card">
+                <span class="partners-number">03</span>
+                <h3>{% trans "Opérateurs privés à forte ambition" %}</h3>
+                <p>
+                    {% blocktrans trimmed %}
+                    Des entreprises qui développent des projets
+                    d'envergure dans des secteurs à fort potentiel.
+                    {% endblocktrans %}
+                </p>
+            </article>
+
+            <article class="partners-card">
+                <span class="partners-number">04</span>
+                <h3>{% trans "Partenaires techniques et financiers" %}</h3>
+                <p>
+                    {% blocktrans trimmed %}
+                    Des acteurs de premier plan contribuant
+                    à la structuration et à la réalisation
+                    de projets stratégiques.
+                    {% endblocktrans %}
+                </p>
+            </article>
+
+        </div>
+
+        <div class="partners-conclusion">
+            <p>
+                {% blocktrans trimmed %}
+                Notre force réside dans notre capacité à anticiper
+                les besoins de nos partenaires, à sécuriser les
+                opérations et à assurer une gestion rigoureuse
+                des risques dans les environnements les plus
+                complexes et sensibles.
+                {% endblocktrans %}
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}

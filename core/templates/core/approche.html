@@ -1,0 +1,161 @@
+
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Notre approche" %} — SIGNURE{% endblock %}
+
+{% block content %}
+
+<main class="inner-page approche-page">
+
+    <!-- INTRODUCTION -->
+
+    <section class="approach-intro">
+
+        <div class="section-tag">
+            {% trans "NOTRE MÉTHODOLOGIE" %}
+        </div>
+
+        <h1>
+            {% trans "Notre" %} <em>{% trans "approche" %}</em>
+        </h1>
+
+        <div class="approach-intro-layout">
+
+            <div class="approach-intro-text">
+
+                <p class="approach-description">
+                    {% trans "Chez SIGNURE, chaque projet repose sur une compréhension approfondie des enjeux de nos partenaires, une planification rigoureuse et une exécution orientée vers les résultats. Notre approche associe expertise technique, agilité opérationnelle et gouvernance transparente pour accompagner des projets stratégiques à forte valeur ajoutée." %}
+                </p>
+
+            </div>
+
+            <!-- PHOTO À DROITE
+            <div class="about-image signure-photo-reflet">
+                <img
+                    src="{% static 'core/signure_approche.png' %}"
+                    alt="Équipe de professionnels travaillant sur un projet stratégique"
+                >
+            </div>
+            -->
+
+        </div>
+
+    </section>
+
+    <!-- NOTRE MÉTHODOLOGIE -->
+
+    <section class="approach-method">
+
+        <div class="section-tag">
+            {% trans "COMMENT NOUS TRAVAILLONS" %}
+        </div>
+
+        <h2 class="approach-title">
+            {% trans "Une méthode" %} <em>{% trans "structurée" %}</em>
+        </h2>
+
+        <div class="approach-grid">
+
+            <article class="approach-card">
+                <span>01</span>
+                <h3>{% trans "Analyse stratégique" %}</h3>
+                <p>
+                    {% trans "Comprendre les objectifs, les besoins et les contraintes de chaque partenaire afin d'identifier les solutions les plus adaptées." %}
+                </p>
+            </article>
+
+            <article class="approach-card">
+                <span>02</span>
+                <h3>{% trans "Planification et structuration" %}</h3>
+                <p>
+                    {% trans "Définir les ressources, les priorités, les responsabilités et les modalités d'exécution pour assurer la cohérence du projet." %}
+                </p>
+            </article>
+
+            <article class="approach-card">
+                <span>03</span>
+                <h3>{% trans "Mobilisation opérationnelle" %}</h3>
+                <p>
+                    {% trans "Coordonner les compétences, les équipements et les partenaires nécessaires à la réalisation des opérations." %}
+                </p>
+            </article>
+
+            <article class="approach-card">
+                <span>04</span>
+                <h3>{% trans "Exécution et suivi" %}</h3>
+                <p>
+                    {% trans "Assurer un suivi rigoureux des activités, des délais, de la qualité et des risques tout au long du projet." %}
+                </p>
+            </article>
+
+            <article class="approach-card">
+                <span>05</span>
+                <h3>{% trans "Évaluation des résultats" %}</h3>
+                <p>
+                    {% trans "Mesurer les performances, analyser les résultats et identifier les améliorations nécessaires." %}
+                </p>
+            </article>
+
+            <article class="approach-card">
+                <span>06</span>
+                <h3>{% trans "Partenariat durable" %}</h3>
+                <p>
+                    {% trans "Développer des relations fondées sur la confiance, la transparence et la création de valeur à long terme." %}
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- NOS PRINCIPES -->
+
+    <section class="approach-principles">
+
+        <div class="section-tag">
+            {% trans "NOS PRINCIPES DIRECTEURS" %}
+        </div>
+
+        <h2 class="approach-title">
+            {% trans "Des engagements" %} <em>{% trans "concrets" %}</em>
+        </h2>
+
+        <div class="approach-principles-grid">
+
+            <div class="approach-principle">
+                <h3>{% trans "Rigueur" %}</h3>
+                <p>
+                    {% trans "Une gestion méthodique et responsable de chaque étape du projet." %}
+                </p>
+            </div>
+
+            <div class="approach-principle">
+                <h3>{% trans "Transparence" %}</h3>
+                <p>
+                    {% trans "Une communication claire et une gouvernance fondée sur l'intégrité." %}
+                </p>
+            </div>
+
+            <div class="approach-principle">
+                <h3>{% trans "Performance" %}</h3>
+                <p>
+                    {% trans "Une recherche constante de résultats mesurables et durables." %}
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONCLUSION -->
+
+    <div class="approach-conclusion">
+        <p>
+            {% trans "Notre ambition est de transformer chaque collaboration en un partenariat stratégique durable, au service de l'excellence opérationnelle et de la réussite des projets." %}
+        </p>
+    </div>
+
+</main>
+
+{% endblock %}

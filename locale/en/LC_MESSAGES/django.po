@@ -1,0 +1,1033 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SIGNURE\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-29 23:57+0100\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\forms.py:22
+msgid "Votre nom"
+msgstr "Your Name"
+
+#: .\core\forms.py:28
+msgid "nom@entreprise.com"
+msgstr "name@company.com"
+
+#: .\core\forms.py:34
+msgid "Votre organisation"
+msgstr "Your Organization"
+
+#: .\core\forms.py:40 .\core\templates\core\home.html:268
+msgid "Parlez-nous de votre projet"
+msgstr "Tell Us About Your Project"
+
+#: .\core\templates\core\approche.html:5 .\core\templates\core\base.html:87
+msgid "Notre approche"
+msgstr "Our Approach"
+
+#: .\core\templates\core\approche.html:16
+msgid "NOTRE MÉTHODOLOGIE"
+msgstr "OUR METHODOLOGY"
+
+#: .\core\templates\core\approche.html:20 .\core\templates\core\apropos.html:71
+#: .\core\templates\core\apropos.html:152
+msgid "Notre"
+msgstr "Our"
+
+#: .\core\templates\core\approche.html:20
+msgid "approche"
+msgstr "Approach"
+
+#: .\core\templates\core\approche.html:28
+msgid ""
+"Chez SIGNURE, chaque projet repose sur une compréhension approfondie des "
+"enjeux de nos partenaires, une planification rigoureuse et une exécution "
+"orientée vers les résultats. Notre approche associe expertise technique, "
+"agilité opérationnelle et gouvernance transparente pour accompagner des "
+"projets stratégiques à forte valeur ajoutée."
+msgstr ""
+"At SIGNURE, every project is built on a thorough understanding of our "
+"partners' challenges, meticulous planning and results-driven execution. Our "
+"approach combines technical expertise, operational agility and transparent "
+"governance to deliver high-value strategic projects."
+
+#: .\core\templates\core\approche.html:51
+msgid "COMMENT NOUS TRAVAILLONS"
+msgstr "HOW WE WORK"
+
+#: .\core\templates\core\approche.html:55
+msgid "Une méthode"
+msgstr "A"
+
+#: .\core\templates\core\approche.html:55
+msgid "structurée"
+msgstr "Structured Method"
+
+#: .\core\templates\core\approche.html:62
+msgid "Analyse stratégique"
+msgstr "Strategic Analysis"
+
+#: .\core\templates\core\approche.html:64
+msgid ""
+"Comprendre les objectifs, les besoins et les contraintes de chaque "
+"partenaire afin d'identifier les solutions les plus adaptées."
+msgstr ""
+"Understand each partner's objectives, needs and constraints to identify the "
+"most suitable solutions."
+
+#: .\core\templates\core\approche.html:70
+msgid "Planification et structuration"
+msgstr "Planning and Structuring"
+
+#: .\core\templates\core\approche.html:72
+msgid ""
+"Définir les ressources, les priorités, les responsabilités et les modalités "
+"d'exécution pour assurer la cohérence du projet."
+msgstr ""
+"Define resources, priorities, responsibilities and execution procedures to "
+"ensure project consistency."
+
+#: .\core\templates\core\approche.html:78
+msgid "Mobilisation opérationnelle"
+msgstr "Operational Mobilization"
+
+#: .\core\templates\core\approche.html:80
+msgid ""
+"Coordonner les compétences, les équipements et les partenaires nécessaires à "
+"la réalisation des opérations."
+msgstr ""
+"Coordinate the expertise, equipment and partners required to carry out "
+"operations."
+
+#: .\core\templates\core\approche.html:86
+msgid "Exécution et suivi"
+msgstr "Execution and Monitoring"
+
+#: .\core\templates\core\approche.html:88
+msgid ""
+"Assurer un suivi rigoureux des activités, des délais, de la qualité et des "
+"risques tout au long du projet."
+msgstr ""
+"Ensure rigorous monitoring of activities, deadlines, quality and risks "
+"throughout the project."
+
+#: .\core\templates\core\approche.html:94
+msgid "Évaluation des résultats"
+msgstr "Performance Evaluation"
+
+#: .\core\templates\core\approche.html:96
+msgid ""
+"Mesurer les performances, analyser les résultats et identifier les "
+"améliorations nécessaires."
+msgstr ""
+"Measure performance, analyze results and identify areas for improvement."
+
+#: .\core\templates\core\approche.html:102
+msgid "Partenariat durable"
+msgstr "Long-Term Partnership"
+
+#: .\core\templates\core\approche.html:104
+msgid ""
+"Développer des relations fondées sur la confiance, la transparence et la "
+"création de valeur à long terme."
+msgstr ""
+"Build relationships based on trust, transparency and long-term value "
+"creation."
+
+#: .\core\templates\core\approche.html:117
+msgid "NOS PRINCIPES DIRECTEURS"
+msgstr "OUR GUIDING PRINCIPLES"
+
+#: .\core\templates\core\approche.html:121
+msgid "Des engagements"
+msgstr "Tangible"
+
+#: .\core\templates\core\approche.html:121
+msgid "concrets"
+msgstr "Commitments"
+
+#: .\core\templates\core\approche.html:127
+msgid "Rigueur"
+msgstr "Rigor"
+
+#: .\core\templates\core\approche.html:129
+msgid "Une gestion méthodique et responsable de chaque étape du projet."
+msgstr "Methodical and responsible management of every stage of the project."
+
+#: .\core\templates\core\approche.html:134
+msgid "Transparence"
+msgstr "Transparency"
+
+#: .\core\templates\core\approche.html:136
+msgid "Une communication claire et une gouvernance fondée sur l'intégrité."
+msgstr "Clear communication and governance founded on integrity."
+
+#: .\core\templates\core\approche.html:141
+msgid "Performance"
+msgstr "Performance"
+
+#: .\core\templates\core\approche.html:143
+msgid "Une recherche constante de résultats mesurables et durables."
+msgstr "A continuous pursuit of measurable and sustainable results."
+
+#: .\core\templates\core\approche.html:155
+msgid ""
+"Notre ambition est de transformer chaque collaboration en un partenariat "
+"stratégique durable, au service de l'excellence opérationnelle et de la "
+"réussite des projets."
+msgstr ""
+"Our ambition is to turn every collaboration into a lasting strategic "
+"partnership, fostering operational excellence and successful project "
+"delivery."
+
+#: .\core\templates\core\apropos.html:5 .\core\templates\core\base.html:79
+msgid "À propos"
+msgstr "About Us"
+
+#: .\core\templates\core\apropos.html:15
+msgid "DÉCOUVRIR SIGNURE"
+msgstr "DISCOVER SIGNURE"
+
+#: .\core\templates\core\apropos.html:19
+msgid "À propos de"
+msgstr "About Us"
+
+#: .\core\templates\core\apropos.html:27
+msgid ""
+"<strong>SIGNURE</strong> — Société Internationale de Gestion, de Négoce et "
+"d’Utilisation de Ressources — est une entreprise d’excellence opérant au "
+"cœur des secteurs stratégiques que sont l’énergie, les infrastructures, la "
+"construction et l’exploitation minière."
+msgstr ""
+"<strong>SIGNURE</strong> — International Company for Resource Management, "
+"Trading and Utilization — is a company committed to excellence, operating in "
+"the strategic sectors of energy, infrastructure, construction and mining."
+
+#: .\core\templates\core\apropos.html:37
+msgid ""
+"Nous nous positionnons comme un acteur polyvalent, agile et visionnaire, "
+"capable d’accompagner des projets à haut impact économique et industriel "
+"dans des environnements complexes et exigeants."
+msgstr ""
+"We position ourselves as a versatile, agile and forward-thinking company, "
+"capable of supporting projects with significant economic and industrial "
+"impact in complex and demanding environments."
+
+#: .\core\templates\core\apropos.html:46
+msgid ""
+"Avec une expertise éprouvée et une rigueur opérationnelle de haut niveau, "
+"SIGNURE développe, structure et exécute des solutions intégrées destinées "
+"aux gouvernements, aux grands groupes et aux opérateurs industriels "
+"d’envergure internationale."
+msgstr ""
+"With proven expertise and rigorous operational standards, SIGNURE develops, "
+"structures and delivers integrated solutions for governments, major "
+"corporations and industrial operators operating internationally."
+
+#: .\core\templates\core\apropos.html:67
+msgid "NOTRE AMBITION"
+msgstr "OUR AMBITION"
+
+#: .\core\templates\core\apropos.html:71
+msgid "vision"
+msgstr "Vision"
+
+#: .\core\templates\core\apropos.html:75
+msgid ""
+"Nous ambitionnons d’être le partenaire stratégique de référence pour les "
+"institutions publiques et privées engagées dans la transformation "
+"économique, énergétique et infrastructurelle."
+msgstr ""
+"We aspire to become the leading strategic partner for public and private "
+"institutions driving economic, energy and infrastructure transformation."
+
+#: .\core\templates\core\apropos.html:84
+msgid "Notre vision repose sur trois piliers essentiels :"
+msgstr "Our vision is built on three essential pillars:"
+
+#: .\core\templates\core\apropos.html:92
+msgid "Excellence technique"
+msgstr "Technical Excellence"
+
+#: .\core\templates\core\apropos.html:95
+msgid "Dans la gestion d’opérations sensibles et multisectorielles."
+msgstr "In the management of sensitive, multisector operations."
+
+#: .\core\templates\core\apropos.html:105
+msgid "Performance opérationnelle"
+msgstr "Operational Performance"
+
+#: .\core\templates\core\apropos.html:108
+msgid ""
+"Grâce à une exécution maîtrisée et des standards internationaux stricts."
+msgstr "Through controlled execution and rigorous international standards."
+
+#: .\core\templates\core\apropos.html:118
+msgid "Intégrité absolue"
+msgstr "Unwavering Integrity"
+
+#: .\core\templates\core\apropos.html:121
+msgid "Pierre angulaire de chacune de nos collaborations."
+msgstr "The cornerstone of every partnership we build."
+
+#: .\core\templates\core\apropos.html:132
+msgid ""
+"Chez <strong>SIGNURE</strong>, nous croyons que la création de valeur "
+"durable naît de l’alliance entre une expertise pointue, une exécution "
+"irréprochable et une gouvernance transparente."
+msgstr ""
+"At <strong>SIGNURE</strong>, we believe that sustainable value creation "
+"stems from the combination of specialized expertise, flawless execution and "
+"transparent governance."
+
+#: .\core\templates\core\apropos.html:148
+msgid "NOTRE PROMESSE"
+msgstr "OUR PROMISE"
+
+#: .\core\templates\core\apropos.html:152
+msgid "engagement"
+msgstr "Commitment"
+
+#: .\core\templates\core\apropos.html:156
+msgid "SIGNURE s’engage à protéger les intérêts de ses partenaires grâce à :"
+msgstr "SIGNURE is committed to protecting its partners' interests through:"
+
+#: .\core\templates\core\apropos.html:166
+msgid "Exécution sans compromis"
+msgstr "Uncompromising Execution"
+
+#: .\core\templates\core\apropos.html:167
+msgid "Une exécution sans compromis."
+msgstr "Uncompromising execution."
+
+#: .\core\templates\core\apropos.html:172
+msgid "Gestion optimale des risques"
+msgstr "Optimal Risk Management"
+
+#: .\core\templates\core\apropos.html:173
+msgid "Une gestion optimale des risques."
+msgstr "Optimal risk management."
+
+#: .\core\templates\core\apropos.html:178
+msgid "Résultats durables"
+msgstr "Sustainable Results"
+
+#: .\core\templates\core\apropos.html:179
+msgid "Des résultats mesurables et durables."
+msgstr "Measurable and sustainable results."
+
+#: .\core\templates\core\apropos.html:184
+msgid "Qualité irréprochable"
+msgstr "Uncompromising Quality"
+
+#: .\core\templates\core\apropos.html:185
+msgid "Une qualité de service irréprochable."
+msgstr "Uncompromising service quality."
+
+#: .\core\templates\core\apropos.html:192
+msgid ""
+"Nous investissons continuellement dans l’innovation, les compétences et les "
+"technologies afin de toujours dépasser les attentes."
+msgstr ""
+"We continually invest in innovation, talent and technology to consistently "
+"exceed expectations."
+
+#: .\core\templates\core\apropos.html:206
+msgid "NOS COLLABORATIONS STRATÉGIQUES"
+msgstr "OUR STRATEGIC COLLABORATIONS"
+
+#: .\core\templates\core\apropos.html:210
+msgid "Nos clients et"
+msgstr "Our Clients and"
+
+#: .\core\templates\core\apropos.html:210
+msgid "partenaires"
+msgstr "Partners"
+
+#: .\core\templates\core\apropos.html:214
+msgid ""
+"SIGNURE développe des relations de confiance avec des acteurs "
+"institutionnels, industriels et financiers de premier plan."
+msgstr ""
+"SIGNURE builds trusted relationships with leading institutional, industrial "
+"and financial stakeholders."
+
+#: .\core\templates\core\apropos.html:225
+msgid "Entreprises minières internationales"
+msgstr "International Mining Companies"
+
+#: .\core\templates\core\apropos.html:227
+msgid ""
+"Des entreprises engagées dans l'exploitation et la valorisation des "
+"ressources naturelles."
+msgstr ""
+"Companies engaged in the extraction and development of natural resources."
+
+#: .\core\templates\core\apropos.html:236
+msgid "Institutions gouvernementales"
+msgstr "Government Institutions"
+
+#: .\core\templates\core\apropos.html:238
+msgid ""
+"Des institutions porteuses de programmes stratégiques de développement "
+"économique et industriel."
+msgstr ""
+"Institutions leading strategic economic and industrial development programs."
+
+#: .\core\templates\core\apropos.html:248
+msgid "Opérateurs privés à forte ambition"
+msgstr "Ambitious Private-Sector Operators"
+
+#: .\core\templates\core\apropos.html:250
+msgid ""
+"Des entreprises qui développent des projets d'envergure dans des secteurs à "
+"fort potentiel."
+msgstr "Companies developing large-scale projects in high-potential sectors."
+
+#: .\core\templates\core\apropos.html:259
+msgid "Partenaires techniques et financiers"
+msgstr "Technical and Financial Partners"
+
+#: .\core\templates\core\apropos.html:261
+msgid ""
+"Des acteurs de premier plan contribuant à la structuration et à la "
+"réalisation de projets stratégiques."
+msgstr ""
+"Leading stakeholders contributing to the structuring and delivery of "
+"strategic projects."
+
+#: .\core\templates\core\apropos.html:273
+msgid ""
+"Notre force réside dans notre capacité à anticiper les besoins de nos "
+"partenaires, à sécuriser les opérations et à assurer une gestion rigoureuse "
+"des risques dans les environnements les plus complexes et sensibles."
+msgstr ""
+"Our strength lies in our ability to anticipate our partners' needs, secure "
+"operations and ensure rigorous risk management in the most complex and "
+"sensitive environments."
+
+#: .\core\templates\core\base.html:13
+msgid ""
+"SIGNURE — Société Internationale de Gestion, Négoce et d'Utilisation de "
+"Ressources. Mines, énergie, infrastructures et partenariats stratégiques."
+msgstr ""
+"SIGNURE — International Company for Resource Management, Trading and "
+"Utilization. Mining, energy, infrastructure and strategic partnerships."
+
+#: .\core\templates\core\base.html:17
+msgid "SIGNURE — Partenaire de vos ambitions"
+msgstr "SIGNURE — Partnering with Your Ambitions"
+
+#: .\core\templates\core\base.html:53
+msgid "SIGNURE - Accueil"
+msgstr "SIGNURE - Home"
+
+#: .\core\templates\core\base.html:72
+msgid "Navigation principale"
+msgstr "Main navigation"
+
+#: .\core\templates\core\base.html:75
+msgid "Accueil"
+msgstr "Home"
+
+#: .\core\templates\core\base.html:83
+msgid "Expertises"
+msgstr "Expertise"
+
+#: .\core\templates\core\base.html:91
+#: .\core\templates\core\implantations.html:6
+msgid "Nos implantations"
+msgstr "Our Locations"
+
+#: .\core\templates\core\base.html:97
+msgid "Parlons de votre projet"
+msgstr "Let's Discuss Your Project"
+
+#: .\core\templates\core\base.html:147
+msgid "Ouvrir le menu"
+msgstr "Open menu"
+
+#: .\core\templates\core\base.html:172
+msgid "Retour à l'accueil SIGNURE"
+msgstr "Return to SIGNURE home"
+
+#: .\core\templates\core\base.html:181
+msgid "Ensemble, donnons vie aux grandes ambitions."
+msgstr "Together, let's bring great ambitions to life."
+
+#: .\core\templates\core\base.html:186
+msgid "Tous droits réservés."
+msgstr "All rights reserved."
+
+#: .\core\templates\core\base.html:196 .\core\templates\core\base.html:202
+msgid "Contactez-nous"
+msgstr "Contact Us"
+
+#: .\core\templates\core\base.html:212 .\core\templates\core\base.html:213
+msgid "Retour en haut"
+msgstr "Back to Top"
+
+#: .\core\templates\core\expertises.html:5
+msgid "Nos expertises"
+msgstr "Our Expertise"
+
+#: .\core\templates\core\expertises.html:14
+msgid "NOS DOMAINES D'ACTIVITÉ"
+msgstr "OUR AREAS OF ACTIVITY"
+
+#: .\core\templates\core\expertises.html:18
+msgid "Nos"
+msgstr "Our"
+
+#: .\core\templates\core\expertises.html:19
+msgid "expertises"
+msgstr "Expertise"
+
+#: .\core\templates\core\expertises.html:29
+msgid ""
+"SIGNURE accompagne les gouvernements, les compagnies nationales et les "
+"multinationales dans la réalisation de projets stratégiques à haute valeur "
+"ajoutée, en mobilisant des compétences techniques, opérationnelles et "
+"multisectorielles."
+msgstr ""
+"SIGNURE supports governments, national companies and multinational "
+"corporations in delivering high-value strategic projects by mobilizing "
+"technical, operational and cross-sector expertise."
+
+#: .\core\templates\core\expertises.html:51
+msgid "NOS SECTEURS STRATÉGIQUES"
+msgstr "OUR STRATEGIC SECTORS"
+
+#: .\core\templates\core\expertises.html:55
+msgid "Nos domaines"
+msgstr "Our Areas"
+
+#: .\core\templates\core\expertises.html:56
+msgid "d'excellence"
+msgstr "of Excellence"
+
+#: .\core\templates\core\expertises.html:68 .\core\templates\core\home.html:134
+msgid "Énergie, pétrole et gaz"
+msgstr "Energy, Oil and Gas"
+
+#: .\core\templates\core\expertises.html:72
+msgid ""
+"Nous intervenons auprès des gouvernements, compagnies nationales et "
+"multinationales pour :"
+msgstr ""
+"We work with governments, national companies and multinational corporations "
+"to:"
+
+#: .\core\templates\core\expertises.html:77
+msgid "Structurer des transactions pétrolières et gazières."
+msgstr "Structure oil and gas transactions."
+
+#: .\core\templates\core\expertises.html:81
+msgid "Optimiser la chaîne d'approvisionnement énergétique."
+msgstr "Optimize energy supply chains."
+
+#: .\core\templates\core\expertises.html:85
+msgid "Assurer conformité, sécurité et rentabilité."
+msgstr "Ensure compliance, safety and profitability."
+
+#: .\core\templates\core\expertises.html:89
+msgid ""
+"Accompagner les projets d'importation, de stockage et de distribution de "
+"produits pétroliers."
+msgstr "Support petroleum product import, storage and distribution projects."
+
+#: .\core\templates\core\expertises.html:94
+msgid ""
+"Notre approche garantit un pilotage rigoureux des opérations, même dans des "
+"environnements réglementaires stricts."
+msgstr ""
+"Our approach ensures rigorous operational oversight, even in highly "
+"regulated environments."
+
+#: .\core\templates\core\expertises.html:107
+msgid "Mines et exploitation des ressources"
+msgstr "Mining and Resource Extraction"
+
+#: .\core\templates\core\expertises.html:111
+msgid ""
+"SIGNURE met à disposition un large éventail de capacités opérationnelles à "
+"haute valeur ajoutée :"
+msgstr "SIGNURE provides a wide range of high-value operational capabilities:"
+
+#: .\core\templates\core\expertises.html:116
+msgid "Location d'engins lourds et d'équipements spécialisés."
+msgstr "Rental of heavy machinery and specialized equipment."
+
+#: .\core\templates\core\expertises.html:120
+msgid "Appui logistique pour les sites miniers."
+msgstr "Logistical support for mining sites."
+
+#: .\core\templates\core\expertises.html:124
+msgid "Gestion d'opérations de terrain complexes."
+msgstr "Management of complex field operations."
+
+#: .\core\templates\core\expertises.html:128
+msgid ""
+"Solutions d'optimisation pour la productivité et la continuité "
+"d'exploitation."
+msgstr ""
+"Optimization solutions to enhance productivity and operational continuity."
+
+#: .\core\templates\core\expertises.html:133
+msgid ""
+"Nous sommes un partenaire fiable pour les sociétés minières recherchant "
+"disponibilité, performance et expertise technique."
+msgstr ""
+"We are a trusted partner for mining companies seeking availability, "
+"performance and technical expertise."
+
+#: .\core\templates\core\expertises.html:146
+msgid "Construction, ingénierie et infrastructures"
+msgstr "Construction, Engineering and Infrastructure"
+
+#: .\core\templates\core\expertises.html:150
+msgid ""
+"Nous pilotons des projets d'infrastructures majeurs avec une approche "
+"centrée sur :"
+msgstr "We manage major infrastructure projects with an approach focused on:"
+
+#: .\core\templates\core\expertises.html:155
+msgid "La rigueur technique."
+msgstr "Technical rigor."
+
+#: .\core\templates\core\expertises.html:159
+msgid "Le respect des délais et des coûts."
+msgstr "Adherence to schedules and budgets."
+
+#: .\core\templates\core\expertises.html:163
+msgid "L'intégration des normes environnementales et sociales."
+msgstr "Integration of environmental and social standards."
+
+#: .\core\templates\core\expertises.html:167
+msgid ""
+"La mise en œuvre de technologies modernes et de solutions industrielles "
+"innovantes."
+msgstr ""
+"Implementation of modern technologies and innovative industrial solutions."
+
+#: .\core\templates\core\expertises.html:172
+msgid ""
+"SIGNURE intervient sur des constructions industrielles, énergétiques, "
+"logistiques et institutionnelles de grande envergure."
+msgstr ""
+"SIGNURE delivers large-scale industrial, energy, logistics and institutional "
+"construction projects."
+
+#: .\core\templates\core\expertises.html:187
+msgid "NOS AVANTAGES STRATÉGIQUES"
+msgstr "OUR STRATEGIC ADVANTAGES"
+
+#: .\core\templates\core\expertises.html:191
+msgid "Ce qui nous"
+msgstr "What Sets Us"
+
+#: .\core\templates\core\expertises.html:192
+msgid "distingue"
+msgstr "Apart"
+
+#: .\core\templates\core\expertises.html:204
+msgid "Expertise multisectorielle"
+msgstr "Cross-Sector Expertise"
+
+#: .\core\templates\core\expertises.html:208
+msgid ""
+"Une expertise multisectorielle d'élite couvrant les mines, l'énergie, les "
+"infrastructures et la logistique."
+msgstr ""
+"Elite cross-sector expertise spanning mining, energy, infrastructure and "
+"logistics."
+
+#: .\core\templates\core\expertises.html:221
+msgid "Réactivité opérationnelle"
+msgstr "Operational Responsiveness"
+
+#: .\core\templates\core\expertises.html:225
+msgid ""
+"Une capacité d'intervention opérationnelle immédiate avec des équipes et des "
+"équipements mobilisables rapidement."
+msgstr ""
+"Immediate operational response capabilities, with teams and equipment that "
+"can be deployed rapidly."
+
+#: .\core\templates\core\expertises.html:238
+msgid "Approche sur mesure"
+msgstr "Tailored Approach"
+
+#: .\core\templates\core\expertises.html:242
+msgid ""
+"Une approche sur mesure, discrète et confidentielle, adaptée aux enjeux "
+"politiques, économiques et stratégiques de nos clients."
+msgstr ""
+"A tailored, discreet and confidential approach adapted to our clients' "
+"political, economic and strategic challenges."
+
+#: .\core\templates\core\expertises.html:255
+msgid "Conformité et gouvernance"
+msgstr "Compliance and Governance"
+
+#: .\core\templates\core\expertises.html:259
+msgid ""
+"Des standards internationaux de conformité et de gouvernance garantissant "
+"transparence, sécurité et intégrité."
+msgstr ""
+"International compliance and governance standards ensuring transparency, "
+"security and integrity."
+
+#: .\core\templates\core\expertises.html:272
+msgid "Réseau de partenaires"
+msgstr "Partner Network"
+
+#: .\core\templates\core\expertises.html:276
+msgid ""
+"Un réseau d'influence solide composé de partenaires institutionnels, "
+"industriels et financiers."
+msgstr "A strong network of institutional, industrial and financial partners."
+
+#: .\core\templates\core\expertises.html:289
+msgid "Performance durable"
+msgstr "Sustainable Performance"
+
+#: .\core\templates\core\expertises.html:293
+msgid ""
+"Un engagement profond envers la performance durable, soutenu par "
+"l'innovation et le développement du capital humain."
+msgstr ""
+"A strong commitment to sustainable performance, supported by innovation and "
+"human capital development."
+
+#: .\core\templates\core\expertises.html:308
+msgid ""
+"SIGNURE conjugue excellence technique, rigueur opérationnelle et "
+"partenariats stratégiques pour accompagner durablement les ambitions de ses "
+"clients."
+msgstr ""
+"SIGNURE combines technical excellence, operational rigor and strategic "
+"partnerships to support its clients' ambitions over the long term."
+
+# SIGNURE - PAGE ACCUEIL
+#: .\core\templates\core\home.html:5
+msgid "Partenaire de vos ambitions"
+msgstr "Partnering with Your Ambitions"
+
+#: .\core\templates\core\home.html:21
+msgid "CONSEIL · PARTENARIATS · PROJETS STRATÉGIQUES"
+msgstr "ADVISORY · PARTNERSHIPS · STRATEGIC PROJECTS"
+
+#: .\core\templates\core\home.html:25
+msgid "Les grandes ambitions"
+msgstr "Great ambitions"
+
+#: .\core\templates\core\home.html:26
+msgid "méritent des"
+msgstr "deserve"
+
+#: .\core\templates\core\home.html:27
+msgid "partenaires d'exception."
+msgstr "exceptional partners."
+
+#: .\core\templates\core\home.html:31
+msgid ""
+"Des ressources naturelles aux infrastructures de demain, SIGNURE accompagne "
+"les acteurs qui façonnent un avenir durable."
+msgstr ""
+"From natural resources to the infrastructure of tomorrow, SIGNURE supports "
+"the organizations shaping a sustainable future."
+
+#: .\core\templates\core\home.html:36
+msgid "Explorer nos expertises"
+msgstr "Explore Our Expertise"
+
+#: .\core\templates\core\home.html:41
+msgid "Nous contacter"
+msgstr "Contact Us"
+
+#: .\core\templates\core\home.html:49
+msgid "L'AMBITION COMME HORIZON"
+msgstr "AMBITION AS OUR HORIZON"
+
+#: .\core\templates\core\home.html:50
+msgid "FAITES DÉFILER"
+msgstr "SCROLL DOWN"
+
+#: .\core\templates\core\home.html:59
+msgid "01 — QUI SOMMES-NOUS"
+msgstr "01 — WHO WE ARE"
+
+#: .\core\templates\core\home.html:65
+msgid "Faire avancer"
+msgstr "Moving Forward"
+
+#: .\core\templates\core\home.html:66
+msgid "ce qui"
+msgstr "What"
+
+#: .\core\templates\core\home.html:66
+msgid "compte."
+msgstr "Matters."
+
+#: .\core\templates\core\home.html:71
+msgid ""
+"Chaque grand projet commence par une vision. Nous croyons à la force des "
+"collaborations pour la concrétiser."
+msgstr ""
+"Every great project begins with a vision. We believe in the power of "
+"collaboration to bring it to life."
+
+#: .\core\templates\core\home.html:75
+msgid ""
+"SIGNURE est une entreprise multisectorielle intervenant dans les domaines "
+"stratégiques de l'énergie, des mines, de la construction et des "
+"infrastructures."
+msgstr ""
+"SIGNURE is a multisector company operating in the strategic fields of "
+"energy, mining, construction and infrastructure."
+
+#: .\core\templates\core\home.html:79
+msgid ""
+"Nous accompagnons les institutions publiques, les entreprises et les "
+"opérateurs industriels dans la structuration et la réalisation de leurs "
+"projets."
+msgstr ""
+"We support public institutions, businesses and industrial operators in "
+"structuring and delivering their projects."
+
+#: .\core\templates\core\home.html:83
+msgid "Découvrir SIGNURE"
+msgstr "Discover SIGNURE"
+
+#: .\core\templates\core\home.html:97
+msgid "02 — NOS SECTEURS"
+msgstr "02 — OUR SECTORS"
+
+#: .\core\templates\core\home.html:101
+msgid "Au cœur des secteurs"
+msgstr "At the Heart of the Sectors"
+
+#: .\core\templates\core\home.html:102
+msgid "qui transforment"
+msgstr "Shaping"
+
+#: .\core\templates\core\home.html:102
+msgid "demain."
+msgstr "Tomorrow."
+
+#: .\core\templates\core\home.html:107
+msgid ""
+"Une expertise multisectorielle au service des grands projets industriels, "
+"énergétiques et infrastructurels."
+msgstr ""
+"Multisector expertise supporting major industrial, energy and infrastructure "
+"projects."
+
+#: .\core\templates\core\home.html:120
+msgid "Mines et ressources"
+msgstr "Mining and Resources"
+
+#: .\core\templates\core\home.html:122
+msgid "Équipements spécialisés, logistique minière et gestion des opérations."
+msgstr "Specialized equipment, mining logistics and operations management."
+
+#: .\core\templates\core\home.html:136
+msgid "Transactions énergétiques, approvisionnement et distribution."
+msgstr "Energy trading, procurement and distribution."
+
+#: .\core\templates\core\home.html:148
+msgid "Construction et infrastructures"
+msgstr "Construction and Infrastructure"
+
+#: .\core\templates\core\home.html:150
+msgid "Ingénierie, grands travaux et projets structurants."
+msgstr ""
+"Engineering, major construction works and strategic infrastructure projects."
+
+#: .\core\templates\core\home.html:159
+msgid "Découvrir toutes nos expertises"
+msgstr "Explore All Our Expertise"
+
+#: .\core\templates\core\home.html:170
+msgid "03 — NOTRE PHILOSOPHIE"
+msgstr "03 — OUR PHILOSOPHY"
+
+#: .\core\templates\core\home.html:176
+msgid "Une ambition commune."
+msgstr "A Shared Ambition."
+
+#: .\core\templates\core\home.html:177
+msgid "Un impact durable."
+msgstr "A Lasting Impact."
+
+#: .\core\templates\core\home.html:184
+msgid "Vision stratégique"
+msgstr "Strategic Vision"
+
+#: .\core\templates\core\home.html:186
+msgid "Comprendre les ambitions et les enjeux de chaque projet."
+msgstr "Understanding the ambitions and challenges of each project."
+
+#: .\core\templates\core\home.html:192
+msgid "Relations de confiance"
+msgstr "Trusted Relationships"
+
+#: .\core\templates\core\home.html:194
+msgid "Construire des collaborations solides et durables."
+msgstr "Building strong and lasting partnerships."
+
+#: .\core\templates\core\home.html:200
+msgid "Engagement à long terme"
+msgstr "Long-Term Commitment"
+
+#: .\core\templates\core\home.html:202
+msgid "Favoriser les initiatives créatrices de valeur durable."
+msgstr "Supporting initiatives that create lasting value."
+
+#: .\core\templates\core\home.html:207
+msgid "Découvrir notre approche"
+msgstr "Discover Our Approach"
+
+#: .\core\templates\core\home.html:219
+msgid "PARTENARIATS ET OPPORTUNITÉS"
+msgstr "PARTNERSHIPS AND OPPORTUNITIES"
+
+#: .\core\templates\core\home.html:223
+msgid "Travaillons"
+msgstr "Let's Work"
+
+#: .\core\templates\core\home.html:223
+msgid "ensemble"
+msgstr "Together"
+
+#: .\core\templates\core\home.html:229
+msgid ""
+"Que vous soyez une entreprise minière d’envergure, un organisme public "
+"stratégique ou une institution privée engagée dans des projets "
+"d’infrastructure ou d’énergie, SIGNURE est le partenaire idéal pour "
+"accompagner vos initiatives les plus ambitieuses."
+msgstr ""
+"Whether you are a major mining company, a strategic public organization or a "
+"private institution involved in infrastructure or energy projects, SIGNURE "
+"is the ideal partner to support your most ambitious initiatives."
+
+#: .\core\templates\core\home.html:233
+msgid "Contactez-nous pour explorer des opportunités de collaboration"
+msgstr "Contact Us to Explore Collaboration Opportunities"
+
+#: .\core\templates\core\home.html:246
+msgid "04 — ENTRONS EN CONTACT"
+msgstr "04 — GET IN TOUCH"
+
+#: .\core\templates\core\home.html:250
+msgid "Votre prochain grand"
+msgstr "Your Next Major"
+
+#: .\core\templates\core\home.html:251
+msgid "projet commence"
+msgstr "Project Starts"
+
+#: .\core\templates\core\home.html:251
+msgid "ici."
+msgstr "Here."
+
+#: .\core\templates\core\home.html:255
+msgid ""
+"Parlons de vos objectifs et explorons ensemble les opportunités de "
+"collaboration."
+msgstr ""
+"Let's discuss your goals and explore opportunities for collaboration "
+"together."
+
+#: .\core\templates\core\home.html:261
+msgid "PARTENARIATS · COLLABORATIONS · OPPORTUNITÉS"
+msgstr "PARTNERSHIPS · COLLABORATIONS · OPPORTUNITIES"
+
+#: .\core\templates\core\home.html:296
+msgid "Envoyer ma demande"
+msgstr "Submit My Inquiry"
+
+#: .\core\templates\core\implantations.html:18
+msgid "PRÉSENCE INTERNATIONALE"
+msgstr "INTERNATIONAL PRESENCE"
+
+#: .\core\templates\core\implantations.html:22
+msgid "SIGNURE dans"
+msgstr "SIGNURE Around"
+
+#: .\core\templates\core\implantations.html:22
+msgid "le monde."
+msgstr "the World."
+
+#: .\core\templates\core\implantations.html:26
+msgid ""
+"Des équipes à votre écoute sur nos différents marchés pour construire "
+"ensemble des projets à fort impact."
+msgstr ""
+"Dedicated teams across our markets, ready to work with you to develop high-"
+"impact projects."
+
+#: .\core\templates\core\implantations.html:43
+msgid "Drapeau du Burkina Faso"
+msgstr "Flag of Burkina Faso"
+
+#: .\core\templates\core\implantations.html:49
+msgid ""
+"Nous restons à votre disposition pour répondre à vos demandes et accompagner "
+"vos projets."
+msgstr ""
+"Our team is available to respond to your inquiries and support your projects."
+
+#: .\core\templates\core\implantations.html:64
+#: .\core\templates\core\implantations.html:99
+#: .\core\templates\core\implantations.html:158
+msgid "Écrivez-nous sur WhatsApp"
+msgstr "Contact Us on WhatsApp"
+
+#: .\core\templates\core\implantations.html:78
+msgid "Drapeau de la Côte d'Ivoire"
+msgstr "Flag of Côte d'Ivoire"
+
+#: .\core\templates\core\implantations.html:84
+msgid ""
+"Échangez avec nos équipes sur vos projets et opportunités de collaboration."
+msgstr ""
+"Connect with our team to discuss your projects and potential collaboration "
+"opportunities."
+
+#: .\core\templates\core\implantations.html:113
+msgid "Drapeau de la Guinée"
+msgstr "Flag of Guinea"
+
+#: .\core\templates\core\implantations.html:119
+msgid ""
+"Contactez-nous pour vos projets miniers, industriels et d'infrastructures."
+msgstr ""
+"Contact us to discuss your mining, industrial and infrastructure projects."
+
+#: .\core\templates\core\implantations.html:137
+msgid "Drapeau des États-Unis"
+msgstr "Flag of the United States"
+
+#: .\core\templates\core\implantations.html:143
+msgid ""
+"Notre équipe est à votre écoute pour vos collaborations internationales."
+msgstr "Our team is available to discuss your international partnerships."
+
+#: .\core\templates\core\implantations.html:172
+msgid "Drapeau des Émirats arabes unis"
+msgstr "Flag of the United Arab Emirates"
+
+#: .\core\templates\core\implantations.html:178
+msgid "Ouverture prochaine !"
+msgstr "Coming Soon!"
