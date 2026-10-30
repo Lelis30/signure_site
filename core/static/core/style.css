@@ -2764,3 +2764,68 @@ background-attachment: fixed;
     pointer-events: none;
     transform: translateY(15px);
 }
+
+/* =========================================
+   SIGNURE — HARMONISATION DES GRANDS TITRES
+========================================= */
+
+.apropos-page h1,
+.apropos-page h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(36px, 4.5vw, 64px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+/* Conserver les couleurs des mots accentués */
+
+.apropos-page h1 em,
+.apropos-page h2 em {
+    color: #23add1;
+    font-style: normal;
+}
+
+/* Adaptation aux téléphones */
+
+@media (max-width: 768px) {
+    .apropos-page h1,
+    .apropos-page h2 {
+        font-size: clamp(30px, 7vw, 42px);
+        letter-spacing: -0.8px;
+    }
+}
+
+
+/* ==========================================
+   SIGNURE — TITRES DES GRANDES SECTIONS
+========================================== */
+
+/* Titres de sections : même taille */
+
+.apropos-page .engagement-title,
+.apropos-page .partners-title {
+    font-family: "Manrope", sans-serif !important;
+    font-size: clamp(36px, 4.5vw, 64px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -1.5px !important;
+}
+
+/* Conserver les mots turquoise */
+
+.apropos-page .engagement-title em,
+.apropos-page .partners-title em {
+    color: #23add1;
+    font-style: normal;
+}
+
+/* Adaptation mobile */
+
+@media (max-width: 768px) {
+    .apropos-page .engagement-title,
+    .apropos-page .partners-title {
+        font-size: clamp(30px, 7vw, 42px) !important;
+        letter-spacing: -0.8px !important;
+    }
+}
