@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get(
     "dev-only-change-before-deployment"
 )
 
-DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
+DEBUG = os.environ.get("DJANGO_DEBUG", "0") == "1"
 
 ALLOWED_HOSTS = [
     host.strip()
@@ -103,10 +103,16 @@ STORAGES = {
 }
 
 # SECURITY FOR RENDER
+
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+    SECURE_SSL_REDIRECT = True
+
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+
+    SECURE_HSTS_SECONDS = 3600
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
