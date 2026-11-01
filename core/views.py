@@ -71,3 +71,7 @@ def approche(request):
 
 def implantations(request):
     return render(request, "core/implantations.html")
+
+
+def galerie(request):
+    return render(request, "core/galerie.html")

@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get(
     "dev-only-change-before-deployment"
 )
 
-DEBUG = os.environ.get("DJANGO_DEBUG", "0") == "1"
+DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 
 ALLOWED_HOSTS = [
     host.strip()

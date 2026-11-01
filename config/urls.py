@@ -15,5 +15,9 @@ urlpatterns += i18n_patterns(
     path("expertises/", views.expertises, name="expertises"),
     path("notre-approche/", views.approche, name="approche"),
     path("implantations/", views.implantations, name="implantations"),
+
+    # NOUVELLE PAGE GALERIE
+    path("galerie/", views.galerie, name="galerie"),
+
     prefix_default_language=False,
 )

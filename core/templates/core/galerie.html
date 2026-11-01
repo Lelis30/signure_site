@@ -1,0 +1,508 @@
+
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+    {% trans "Galerie | SIGNURE" %}
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .gallery-page {
+        background: #07151d;
+        color: #fff;
+        min-height: 100vh;
+    }
+
+
+.gallery-hero {
+    padding: 120px 6% 110px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(3, 12, 20, 0.75),
+            rgba(3, 12, 20, 0.85)
+        ),
+        url("{% static 'core/galerie_background.png' %}")
+        center center / cover no-repeat;
+
+    position: relative;
+}
+
+
+    .gallery-eyebrow {
+        color: #23add1;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .gallery-hero h1 {
+        font-size: clamp(38px, 5vw, 66px);
+        margin: 20px 0;
+        color: white;
+    }
+
+    .gallery-hero p {
+        max-width: 720px;
+        margin: auto;
+        color: #c5d7e1;
+        line-height: 1.8;
+    }
+
+    .gallery-section {
+        max-width: 1400px;
+        margin: auto;
+        padding: 70px 5%;
+    }
+
+    /* FILTRES */
+
+    .gallery-filters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 45px;
+    }
+
+    .gallery-filter {
+        background: transparent;
+        color: #d6e5ec;
+        border: 1px solid rgba(255,255,255,.25);
+        padding: 13px 22px;
+        border-radius: 30px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .3s, color .3s, border-color .3s;
+    }
+
+    .gallery-filter:hover,
+    .gallery-filter.active {
+        background: #23add1;
+        color: #07151d;
+        border-color: #23add1;
+    }
+
+    .gallery-filter:focus-visible,
+    .gallery-card:focus-visible,
+    .gallery-close:focus-visible {
+        outline: 3px solid #23add1;
+        outline-offset: 3px;
+    }
+
+    /* GRILLE */
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .gallery-card {
+        overflow: hidden;
+        border-radius: 12px;
+        background: #102733;
+        cursor: pointer;
+        border: 1px solid rgba(255,255,255,.1);
+        padding: 0;
+        text-align: left;
+        color: white;
+        font: inherit;
+    }
+
+    .gallery-card[hidden] {
+        display: none !important;
+    }
+
+    .gallery-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+        transition: transform .5s ease;
+    }
+
+    .gallery-card:hover img {
+        transform: scale(1.07);
+    }
+
+    .gallery-card-caption {
+        display: block;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    /* AGRANDISSEMENT */
+
+    .gallery-lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.94);
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        box-sizing: border-box;
+    }
+
+    .gallery-lightbox.open {
+        display: flex;
+    }
+
+    .gallery-lightbox img {
+        max-width: 95%;
+        max-height: 85vh;
+        object-fit: contain;
+    }
+
+    .gallery-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        background: transparent;
+        color: white;
+        border: 0;
+        font-size: 38px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-hero {
+            padding: 70px 6%;
+        }
+
+        .gallery-filter {
+            padding: 10px 15px;
+            font-size: 12px;
+        }
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<main class="gallery-page">
+
+    <section class="gallery-hero">
+        <div class="gallery-eyebrow">
+            SIGNURE — {% trans "Nos secteurs d'activité" %}
+        </div>
+
+        <h1>{% trans "Galerie" %}</h1>
+
+        <p>
+            {% blocktrans trimmed %}
+            Découvrez en images les secteurs stratégiques
+            qui inspirent notre engagement : mines, pétrole et gaz,
+            énergie, infrastructures, industrie et logistique.
+            {% endblocktrans %}
+        </p>
+    </section>
+
+    <section class="gallery-section">
+
+        <!-- BOUTONS DE FILTRAGE -->
+        <div class="gallery-filters"
+             role="group"
+             aria-label="{% trans 'Filtrer les photos' %}">
+
+            <button class="gallery-filter active"
+                    type="button"
+                    data-filter="all"
+                    aria-pressed="true">
+                {% trans "Toutes les photos" %}
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="construction"
+                    aria-pressed="false">
+                {% trans "Construction" %}
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="infrastructures"
+                    aria-pressed="false">
+                {% trans "Infrastructures" %}
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="industrie"
+                    aria-pressed="false">
+                {% trans "Industrie" %}
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="logistique"
+                    aria-pressed="false">
+                {% trans "Logistique" %}
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="mines"
+                    aria-pressed="false">
+                {% trans "Mines & Ressources" %}
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="oil-gas"
+                    aria-pressed="false">
+                {% trans "Pétrole et Gaz" %}
+            </button>
+
+        </div>
+
+        <!-- PHOTOS -->
+        <div class="gallery-grid">
+
+            <!-- CONSTRUCTION -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="construction">
+                <img src="{% static 'core/galerie/Busy Construction Site in Action.png' %}"
+                     alt="{% trans 'Chantier de construction' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Chantier de construction" %}
+                </span>
+            </button>
+
+            <!-- ÉQUIPE -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="construction">
+                <img src="{% static 'core/galerie/Diverse Signure Construction Team Portrait.png' %}"
+                     alt="{% trans 'Équipe de construction' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Équipe de construction" %}
+                </span>
+            </button>
+
+            <!-- INFRASTRUCTURES -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="infrastructures">
+                <img src="{% static 'core/galerie/signure_galerie_construction.png' %}"
+                     alt="{% trans 'Construction et infrastructures' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Construction et infrastructures" %}
+                </span>
+            </button>
+
+            <!-- LOGISTIQUE -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="logistique">
+                <img src="{% static 'core/galerie/signure_galerie_port.png' %}"
+                     alt="{% trans 'Logistique portuaire' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Logistique portuaire" %}
+                </span>
+            </button>
+
+            <!-- BÂTIMENT -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="construction">
+                <img src="{% static 'core/galerie/WhatsApp Image 2025-08-31 at 13.38.17_d7e834f0.jpg' %}"
+                     alt="{% trans 'Projet de construction' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Projets immobiliers et construction" %}
+                </span>
+            </button>
+
+            <!-- BÂTIMENT EN CONSTRUCTION -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="construction">
+                <img src="{% static 'core/galerie/WhatsApp Image 2025-08-31 at 13.38.18_2a6c2337.jpg' %}"
+                     alt="{% trans 'Bâtiment en construction' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Construction de bâtiments" %}
+                </span>
+            </button>
+
+            <!-- TRAVAUX -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="infrastructures">
+                <img src="{% static 'core/galerie/WhatsApp Image 2025-08-31 at 13.38.18_e6fb48fd.jpg' %}"
+                     alt="{% trans 'Travaux de génie civil' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Travaux de génie civil" %}
+                </span>
+            </button>
+
+            <!-- STRUCTURE INDUSTRIELLE -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="industrie">
+                <img src="{% static 'core/galerie/WhatsApp Image 2025-08-31 at 13.38.19_5126d0c2.png' %}"
+                     alt="{% trans 'Structure industrielle' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Développement industriel" %}
+                </span>
+            </button>
+
+            <!-- MINES : À AJOUTER AU DOSSIER -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="mines">
+                <img src="{% static 'core/galerie/signure_galerie_mines.png' %}"
+                     alt="{% trans 'Exploitation minière' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Mines et ressources naturelles" %}
+                </span>
+            </button>
+
+            <!-- PÉTROLE ET GAZ : À AJOUTER AU DOSSIER -->
+            <button class="gallery-card"
+                    type="button"
+                    data-category="oil-gas">
+                <img src="{% static 'core/galerie/signure_galerie_petrole_gaz.png' %}"
+                     alt="{% trans 'Industrie pétrolière et gazière' %}"
+                     loading="lazy">
+                <span class="gallery-card-caption">
+                    {% trans "Pétrole et gaz" %}
+                </span>
+            </button>
+
+        </div>
+    </section>
+</main>
+
+<!-- FENÊTRE D'AGRANDISSEMENT -->
+<div class="gallery-lightbox"
+     id="galleryLightbox"
+     role="dialog"
+     aria-modal="true"
+     aria-label="{% trans 'Image agrandie' %}"
+     aria-hidden="true">
+
+    <button class="gallery-close"
+            id="galleryClose"
+            type="button"
+            aria-label="{% trans 'Fermer' %}">
+        ×
+    </button>
+
+    <img id="galleryLargeImage" src="" alt="">
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+(function () {
+    const cards = document.querySelectorAll(".gallery-card");
+    const filterButtons = document.querySelectorAll(".gallery-filter");
+
+    const lightbox = document.getElementById("galleryLightbox");
+    const largeImage = document.getElementById("galleryLargeImage");
+    const closeButton = document.getElementById("galleryClose");
+
+    let previousFocus = null;
+
+    // FILTRAGE
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const selectedCategory = button.dataset.filter;
+
+            filterButtons.forEach(btn => {
+                const active = btn === button;
+                btn.classList.toggle("active", active);
+                btn.setAttribute("aria-pressed", String(active));
+            });
+
+            cards.forEach(card => {
+                const show =
+                    selectedCategory === "all" ||
+                    card.dataset.category === selectedCategory;
+
+                card.hidden = !show;
+            });
+        });
+    });
+
+    // FERMER L'IMAGE
+    function closeGallery() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        largeImage.removeAttribute("src");
+        document.body.style.overflow = "";
+
+        if (previousFocus) previousFocus.focus();
+    }
+
+    // OUVRIR L'IMAGE
+    cards.forEach(card => {
+        card.addEventListener("click", function () {
+            const image = card.querySelector("img");
+
+            if (!image || !image.complete || !image.naturalWidth) {
+                return;
+            }
+
+            previousFocus = document.activeElement;
+            largeImage.src = image.src;
+            largeImage.alt = image.alt;
+
+            lightbox.classList.add("open");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+
+            closeButton.focus();
+        });
+    });
+
+    closeButton.addEventListener("click", closeGallery);
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) closeGallery();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (!lightbox.classList.contains("open")) return;
+
+        if (event.key === "Escape") {
+            closeGallery();
+        }
+
+        if (event.key === "Tab") {
+            event.preventDefault();
+            closeButton.focus();
+        }
+    });
+})();
+</script>
+{% endblock %}
