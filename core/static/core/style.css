@@ -2829,3 +2829,39 @@ background-attachment: fixed;
         letter-spacing: -0.8px !important;
     }
 }
+
+/* Agrandir les images de la galerie */
+.lightbox img,
+.lightbox-content img,
+.gallery-modal img {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: auto;
+}
+
+/* Uniformiser la fenêtre d'affichage des photos */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Toutes les images ont la même taille */
+.lightbox img {
+    width: 85vw;
+    height: 80vh;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    display: block;
+}
