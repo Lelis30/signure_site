@@ -37,8 +37,30 @@ def home(request):
         try:
             email.send(fail_silently=False)
 
+
         except Exception as e:
-            print("ERREUR EMAIL SIGNURE :", type(e).__name__, str(e))
+
+            import traceback
+
+            print("\n========== ERREUR EMAIL SIGNURE ==========")
+
+            print("TYPE :", type(e).__name__)
+
+            print("DETAIL :", str(e))
+
+            traceback.print_exc()
+
+            print("==========================================\n")
+
+            messages.warning(
+
+                request,
+
+                "Votre demande a été enregistrée. "
+
+                "La notification par e-mail n'a pas pu être envoyée."
+
+            )
 
             messages.warning(
                 request,

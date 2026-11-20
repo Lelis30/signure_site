@@ -11,6 +11,7 @@ SECRET_KEY = os.environ.get(
 )
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
+SECURE_SSL_REDIRECT = False
 
 ALLOWED_HOSTS = [
     host.strip()
@@ -107,7 +108,7 @@ STORAGES = {
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False
 
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
@@ -128,4 +129,4 @@ EMAIL_HOST_USER = os.environ.get("BREVO_SMTP_LOGIN")
 EMAIL_HOST_PASSWORD = os.environ.get("BREVO_SMTP_KEY")
 
 DEFAULT_FROM_EMAIL = "SIGNURE <idrabo@thesignure.com>"
-CONTACT_NOTIFICATION_EMAIL = "idrabo@thesignure.com"
+CONTACT_NOTIFICATION_EMAIL = "ahomlanto30@gmail.com"
